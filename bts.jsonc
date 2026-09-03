@@ -1,0 +1,28 @@
+// Better-T-Stack project metadata
+//
+// Keep this file to use the `add` command.
+// Add addons: npx create-better-t-stack@latest add
+//
+// Docs: https://better-t-stack.dev/docs
+// Stack Builder: https://better-t-stack.dev/new
+
+{
+  "$schema": "https://r2.better-t-stack.dev/schema.json",
+  "version": "3.42.2",
+  "createdAt": "2026-09-03T02:58:43.878Z",
+  "reproducibleCommand": "npx create-better-t-stack@latest mfe-system --frontend native-uniwind --backend none --runtime none --database none --orm none --api none --auth none --payments none --addons turborepo biome --examples none --db-setup none --web-deploy none --server-deploy none --git --package-manager npm --install",
+  "database": "none",
+  "orm": "none",
+  "backend": "none",
+  "runtime": "none",
+  "frontend": ["native-uniwind"],
+  "addons": ["turborepo", "biome"],
+  "examples": [],
+  "auth": "none",
+  "payments": "none",
+  "packageManager": "npm",
+  "dbSetup": "none",
+  "api": "none",
+  "webDeploy": "none",
+  "serverDeploy": "none",
+}
