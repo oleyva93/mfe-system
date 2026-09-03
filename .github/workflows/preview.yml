@@ -15,19 +15,16 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    defaults:
-      run:
-        working-directory: apps/native
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
       - name: Check for EXPO_TOKEN
         run: |
           if [ -z "${{ secrets.EXPO_TOKEN }}" ]; then
             echo "Add EXPO_TOKEN to GitHub repo secrets: https://docs.expo.dev/eas-update/github-actions"
             exit 1
           fi
-
-      - name: Checkout repository
-        uses: actions/checkout@v5
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -42,7 +39,6 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Install dependencies
-        working-directory: .
         run: npm ci
 
       - name: Create Expo Go preview
