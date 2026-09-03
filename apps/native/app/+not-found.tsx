@@ -1,27 +1,27 @@
 import { Link, Stack } from "expo-router";
-import { Button, Surface } from "heroui-native";
-import { Text, View } from "react-native";
-
-import { Container } from "@/components/container";
+import { Pressable, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function NotFoundScreen() {
+  const insets = useSafeAreaInsets();
+
   return (
     <>
       <Stack.Screen options={{ title: "Not Found" }} />
-      <Container>
-        <View className="flex-1 justify-center items-center p-4">
-          <Surface variant="secondary" className="items-center p-6 max-w-sm rounded-lg">
-            <Text className="text-4xl mb-3">🤔</Text>
-            <Text className="text-foreground font-medium text-lg mb-1">Page Not Found</Text>
-            <Text className="text-muted text-sm text-center mb-4">
-              The page you're looking for doesn't exist.
-            </Text>
-            <Link href="/" asChild>
-              <Button size="sm">Go Home</Button>
-            </Link>
-          </Surface>
-        </View>
-      </Container>
+      <View
+        className="flex-1 items-center justify-center bg-[#141416] px-6"
+        style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
+      >
+        <Text className="mb-2 text-lg font-medium text-[#F2EDE4]">Page not found</Text>
+        <Text className="mb-6 text-center text-sm text-[#8A857D]">
+          The page you are looking for does not exist.
+        </Text>
+        <Link href="/" asChild>
+          <Pressable className="rounded-full bg-[#D4C4AB] px-6 py-3 active:opacity-85">
+            <Text className="text-sm font-medium text-[#1A1816]">Go home</Text>
+          </Pressable>
+        </Link>
+      </View>
     </>
   );
 }
