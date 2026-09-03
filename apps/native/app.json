@@ -58,9 +58,25 @@
         }
       ]
     ],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6fe462c4-a49e-4976-9ea1-9506029c9527",
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "6fe462c4-a49e-4976-9ea1-9506029c9527"
+      }
+    },
+    "owner": "oleyva93"
   }
 }

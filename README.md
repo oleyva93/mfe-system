@@ -27,6 +27,16 @@ npm run dev
 
 Use the Expo Go app to run the mobile application.
 
+## Pull request previews (Expo Go)
+
+Every pull request publishes an EAS Update and adds a comment with a QR code you can scan in **Expo Go** (SDK 57).
+
+1. Create an access token at [expo.dev/settings/access-tokens](https://expo.dev/settings/access-tokens).
+2. Add it to the GitHub repo as **`EXPO_TOKEN`** under **Settings → Secrets and variables → Actions**.
+3. Open or update a pull request — the workflow `.github/workflows/preview.yml` runs automatically.
+
+Docs: [EAS Update GitHub Actions](https://docs.expo.dev/eas-update/github-actions/)
+
 ## Git Hooks and Formatting
 
 - Run checks: `npm run check`
