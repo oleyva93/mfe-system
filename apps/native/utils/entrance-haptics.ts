@@ -13,6 +13,7 @@ export async function playEntranceHaptic() {
       await Haptics.selectionAsync();
     } catch {
       // Haptics unavailable on this device.
+      console.warn("Haptics unavailable on this device.");
     }
   }
 }
