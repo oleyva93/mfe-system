@@ -27,6 +27,16 @@ npm run dev
 
 Use the Expo Go app to run the mobile application.
 
+## MVP spec (GitHub Pages)
+
+The Phase 1 specification is published at:
+
+**https://oleyva93.github.io/mfe-system/**
+
+Source files: `docs/index.html` (canonical for Pages) or `mvp-fase-1-especificacion.html` at the repo root. Pushes to `main` that touch either file deploy automatically via `.github/workflows/pages.yml`.
+
+If the site does not load the first time, enable **GitHub Pages** in the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
 ## Pull request previews (Expo Go)
 
 Every pull request publishes an EAS Update and adds a comment with a QR code you can scan in **Expo Go** (SDK 57).
@@ -36,6 +46,17 @@ Every pull request publishes an EAS Update and adds a comment with a QR code you
 3. Open or update a pull request — the workflow `.github/workflows/preview.yml` runs automatically.
 
 Docs: [EAS Update GitHub Actions](https://docs.expo.dev/eas-update/github-actions/)
+
+### Sharing previews with other people
+
+Since [May 2026](https://expo.dev/changelog/expo-go-loading-changes-may-2026), Expo Go only loads EAS Updates from projects you **own** or belong to as a **collaborator**. If someone else scans the QR and gets a **403**, invite them to the Expo project:
+
+1. Open [expo.dev/accounts/oleyva93/projects/mfe-system](https://expo.dev/accounts/oleyva93/projects/mfe-system).
+2. Go to **Project settings → Access** (or **Collaborators**).
+3. Invite their Expo account email.
+4. They sign in to **Expo Go** with that same account, then scan the QR again.
+
+Without an invite, only your Expo account can open `@oleyva93/mfe-system` previews in Expo Go. For wider distribution (clients, QA without Expo accounts), use a **development build** with internal distribution instead.
 
 ## Git Hooks and Formatting
 
