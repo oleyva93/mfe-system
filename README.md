@@ -27,6 +27,16 @@ npm run dev
 
 Use the Expo Go app to run the mobile application.
 
+## MVP spec (GitHub Pages)
+
+The Phase 1 specification is published at:
+
+**https://oleyva93.github.io/mfe-system/**
+
+Source files: `docs/index.html` (canonical for Pages) or `mvp-fase-1-especificacion.html` at the repo root. Pushes to `main` that touch either file deploy automatically via `.github/workflows/pages.yml`.
+
+If the site does not load the first time, enable **GitHub Pages** in the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
 ## Pull request previews (Expo Go)
 
 Every pull request publishes an EAS Update and adds a comment with a QR code you can scan in **Expo Go** (SDK 57).
