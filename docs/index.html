@@ -14,7 +14,6 @@
     />
     <style>
       :root {
-        /* Tema Samari Studio — tomado 1:1 de samari-studio-website-main/app/globals.css */
         --bg: oklch(0.07 0.02 285);
         --surface: oklch(0.11 0.025 285);
         --surface-2: oklch(0.14 0.03 285);
@@ -26,16 +25,15 @@
         --accent-light: oklch(0.82 0.1 290);
         --accent-soft: oklch(0.65 0.28 290 / 0.15);
         --serif: "Instrument Serif", Georgia, serif;
-        --admin: #6366f1;
-        --hoster: #10b981;
-        --provider: #f59e0b;
-        --customer: #3b82f6;
-        --danger: #ef4444;
-        --success: #22c55e;
-        --radius: 10px;
-        --font:
-          "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
-        --mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+        --admin: #818cf8;
+        --hoster: #34d399;
+        --provider: #fbbf24;
+        --customer: #60a5fa;
+        --danger: #f87171;
+        --success: #4ade80;
+        --radius: 12px;
+        --font: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+        --mono: "JetBrains Mono", "SF Mono", monospace;
       }
 
       * {
@@ -48,8 +46,38 @@
         font-family: var(--font);
         background: var(--bg);
         color: var(--text);
-        line-height: 1.65;
+        line-height: 1.6;
         font-size: 16px;
+      }
+
+      .brand-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 0.9rem 1.5rem;
+        font-family: var(--mono);
+      }
+      .brand-mark {
+        display: flex;
+        align-items: center;
+      }
+      .brand-logo {
+        height: 20px;
+        width: auto;
+        display: block;
+      }
+      .brand-logo-icon {
+        height: 16px;
+        width: auto;
+        display: block;
+      }
+      .brand-tagline {
+        font-size: 0.78rem;
+        color: var(--text-muted);
       }
 
       .hero {
@@ -60,43 +88,36 @@
           oklch(0.1 0.045 292) 100%
         );
         border-bottom: 1px solid var(--border);
-        padding: 4rem 2rem 3rem;
+        padding: 3.5rem 2rem 2.75rem;
         text-align: center;
       }
-
       .hero h1 {
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
         font-weight: 300;
         letter-spacing: 0.02em;
         margin-bottom: 0.75rem;
       }
-
       .hero h1 span {
         color: var(--accent-light);
         font-family: var(--serif);
         font-style: italic;
         font-weight: 400;
       }
-
       .hero .subtitle {
         color: var(--text-muted);
-        max-width: 720px;
-        margin: 0 auto 1.5rem;
+        max-width: 640px;
+        margin: 0 auto 1.25rem;
         font-size: 1.05rem;
       }
-
       .hero-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.6rem;
         justify-content: center;
-        margin-top: 1.5rem;
       }
 
       .badge {
         display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
         padding: 0.35rem 0.85rem;
         border-radius: 999px;
         font-size: 0.8rem;
@@ -104,7 +125,6 @@
         border: 1px solid var(--border);
         background: var(--surface);
       }
-
       .badge.gold {
         border-color: var(--accent);
         color: var(--accent);
@@ -118,69 +138,53 @@
         background: oklch(0.07 0.02 285 / 0.92);
         backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--border);
-        padding: 0.75rem 1rem;
+        padding: 0.7rem 1rem;
         overflow-x: auto;
       }
-
       nav.toc ul {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.35rem;
         list-style: none;
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         white-space: nowrap;
       }
-
       nav.toc a {
         color: var(--text-muted);
         text-decoration: none;
-        font-size: 0.82rem;
-        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.7rem;
         border-radius: 6px;
-        transition: all 0.2s;
       }
-
       nav.toc a:hover {
         color: var(--accent);
         background: var(--accent-soft);
       }
 
       main {
-        max-width: 1100px;
+        max-width: 1040px;
         margin: 0 auto;
         padding: 2.5rem 1.5rem 4rem;
       }
 
       section {
-        margin-bottom: 3.5rem;
+        margin-bottom: 4rem;
         scroll-margin-top: 4rem;
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
         font-weight: 500;
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.5rem;
+        margin-bottom: 0.4rem;
+        padding-bottom: 0.45rem;
         border-bottom: 2px solid var(--accent);
         display: inline-block;
       }
-
       h3 {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
         font-weight: 600;
-        margin: 1.75rem 0 0.75rem;
-        color: var(--text);
+        margin: 2rem 0 0.7rem;
       }
-
-      h4 {
-        font-size: 0.95rem;
-        font-weight: 600;
-        margin: 1.25rem 0 0.5rem;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-      }
-
       p {
         margin-bottom: 1rem;
         color: var(--text-muted);
@@ -188,470 +192,572 @@
       p.lead {
         font-size: 1.05rem;
         color: var(--text);
+        max-width: 720px;
+      }
+      p.caption {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        margin: -0.35rem 0 1.25rem;
+      }
+      strong {
+        color: var(--text);
+        font-weight: 600;
       }
 
-      .card-grid {
+      .takeaway {
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 1rem 1.15rem;
+        margin: 1rem 0 1.5rem;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+      .takeaway .k {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent-light);
+        flex-shrink: 0;
+        padding-top: 0.15rem;
+      }
+
+      .kpi-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.25rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.85rem;
         margin: 1.5rem 0;
       }
+      .kpi {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 1.05rem 1.1rem;
+      }
+      .kpi strong {
+        display: block;
+        font-size: 1.2rem;
+        color: var(--accent-light);
+        margin-bottom: 0.2rem;
+      }
+      .kpi span {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
 
-      .card {
+      /* Journey */
+      .journey {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+        margin: 1.25rem 0;
+      }
+      .j-step {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1rem 0.95rem 1.05rem;
+        position: relative;
+      }
+      .j-step .n {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--accent-light);
+        margin-bottom: 0.4rem;
+      }
+      .j-step h4 {
+        font-size: 0.92rem;
+        font-weight: 600;
+        margin: 0 0 0.3rem;
+        text-transform: none;
+        letter-spacing: 0;
+        color: var(--text);
+      }
+      .j-step p {
+        font-size: 0.8rem;
+        margin: 0;
+      }
+
+      /* Sites */
+      .sites {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1.25rem 0;
+      }
+      .site {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius);
         padding: 1.25rem;
-        transition: border-color 0.2s;
+      }
+      .site.pub {
+        border-top: 3px solid var(--customer);
+      }
+      .site.ops {
+        border-top: 3px solid var(--admin);
+      }
+      .site h3 {
+        margin: 0 0 0.35rem;
+      }
+      .site ul {
+        margin: 0.75rem 0 0;
+        padding-left: 1.1rem;
+        color: var(--text-muted);
+        font-size: 0.88rem;
+      }
+      .site li {
+        margin-bottom: 0.3rem;
       }
 
-      .card:hover {
-        border-color: var(--accent);
+      /* Anatomy */
+      .anatomy {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1.2fr;
+        gap: 0.65rem;
+        align-items: stretch;
+        margin: 1.25rem 0;
       }
-
-      .card .icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
+      .an-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.1rem 1rem;
+      }
+      .an-box h4 {
+        margin: 0 0 0.4rem;
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+      .an-box p {
+        font-size: 0.82rem;
+        margin: 0;
+      }
+      .an-plus,
+      .an-eq {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.2rem;
-        margin-bottom: 0.75rem;
+        font-size: 1.4rem;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .an-box.house {
+        border-top: 3px solid var(--hoster);
+      }
+      .an-box.svc {
+        border-top: 3px solid var(--provider);
+      }
+      .an-box.exp {
+        border-top: 3px solid var(--customer);
       }
 
-      .card.admin .icon {
-        background: rgba(99, 102, 241, 0.2);
+      /* Roles */
+      .role-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.85rem;
+        margin: 1.25rem 0;
       }
-      .card.hoster .icon {
-        background: rgba(16, 185, 129, 0.2);
+      .role {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.1rem;
       }
-      .card.provider .icon {
-        background: rgba(245, 158, 11, 0.2);
+      .role .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-bottom: 0.65rem;
       }
-      .card.customer .icon {
-        background: rgba(59, 130, 246, 0.2);
+      .role.admin {
+        border-top: 3px solid var(--admin);
       }
-
-      .card h3 {
-        margin: 0 0 0.5rem;
+      .role.hoster {
+        border-top: 3px solid var(--hoster);
+      }
+      .role.provider {
+        border-top: 3px solid var(--provider);
+      }
+      .role.customer {
+        border-top: 3px solid var(--customer);
+      }
+      .role.admin .dot {
+        background: var(--admin);
+      }
+      .role.hoster .dot {
+        background: var(--hoster);
+      }
+      .role.provider .dot {
+        background: var(--provider);
+      }
+      .role.customer .dot {
+        background: var(--customer);
+      }
+      .role h3 {
+        margin: 0 0 0.4rem;
         font-size: 1rem;
       }
-      .card p {
-        font-size: 0.9rem;
+      .role p {
+        font-size: 0.82rem;
         margin: 0;
       }
 
-      .role-tag {
+      .chip {
         display: inline-block;
-        padding: 0.15rem 0.5rem;
-        border-radius: 4px;
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         font-weight: 600;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-right: 0.35rem;
+        padding: 0.12rem 0.4rem;
+        border-radius: 4px;
       }
-
-      .role-tag.admin {
-        background: rgba(99, 102, 241, 0.25);
-        color: #a5b4fc;
+      .chip.admin {
+        background: rgba(129, 140, 248, 0.2);
+        color: var(--admin);
       }
-      .role-tag.hoster {
-        background: rgba(16, 185, 129, 0.25);
-        color: #6ee7b7;
+      .chip.hoster {
+        background: rgba(52, 211, 153, 0.18);
+        color: var(--hoster);
       }
-      .role-tag.provider {
-        background: rgba(245, 158, 11, 0.25);
-        color: #fcd34d;
+      .chip.provider {
+        background: rgba(251, 191, 36, 0.18);
+        color: var(--provider);
       }
-      .role-tag.customer {
-        background: rgba(59, 130, 246, 0.25);
-        color: #93c5fd;
-      }
-      .role-tag.all {
-        background: var(--accent-soft);
-        color: var(--accent-light);
+      .chip.customer {
+        background: rgba(96, 165, 250, 0.2);
+        color: var(--customer);
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
-        margin: 1rem 0 1.5rem;
-        font-size: 0.9rem;
+        margin: 0.75rem 0 1.4rem;
+        font-size: 0.88rem;
         background: var(--surface);
         border-radius: var(--radius);
         overflow: hidden;
         border: 1px solid var(--border);
       }
-
       th,
       td {
-        padding: 0.75rem 1rem;
+        padding: 0.7rem 0.9rem;
         text-align: left;
         border-bottom: 1px solid var(--border);
+        vertical-align: top;
       }
-
       th {
         background: var(--surface-2);
         font-weight: 600;
-        font-size: 0.8rem;
+        font-size: 0.74rem;
         text-transform: uppercase;
         letter-spacing: 0.04em;
         color: var(--text-muted);
       }
-
       tr:last-child td {
         border-bottom: none;
       }
-      tr:hover td {
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .rule-list,
-      .uc-list,
-      .story-list {
-        list-style: none;
-        margin: 1rem 0;
-      }
-
-      .rule-list li,
-      .uc-list li,
-      .story-list li {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 0.85rem 1rem;
-        margin-bottom: 0.6rem;
-        font-size: 0.92rem;
-      }
-
-      .rule-list li strong,
-      .uc-list li strong,
-      .story-list li strong {
-        color: var(--accent);
-        display: block;
-        margin-bottom: 0.25rem;
-        font-size: 0.85rem;
-      }
-
-      .rule-list li .id {
-        font-family: var(--mono);
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        float: right;
-      }
-
-      .story-list li {
-        border-left: 3px solid var(--accent);
-      }
-
-      .story-list .points {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-top: 0.35rem;
-      }
-
-      .priority {
-        display: inline-block;
-        padding: 0.1rem 0.4rem;
-        border-radius: 4px;
-        font-size: 0.7rem;
-        font-weight: 700;
-      }
-
-      .priority.p0 {
-        background: rgba(239, 68, 68, 0.2);
-        color: #fca5a5;
-      }
-      .priority.p1 {
-        background: rgba(245, 158, 11, 0.2);
-        color: #fcd34d;
-      }
-      .priority.p2 {
-        background: rgba(59, 130, 246, 0.2);
-        color: #93c5fd;
-      }
-
-      .diagram {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        overflow-x: auto;
-      }
-
-      .diagram pre {
-        font-family: var(--mono);
-        font-size: 0.78rem;
-        line-height: 1.5;
-        color: var(--text-muted);
-        white-space: pre;
-      }
-
-      .phase-timeline {
-        position: relative;
-        padding-left: 2rem;
-        margin: 1.5rem 0;
-      }
-
-      .phase-timeline::before {
-        content: "";
-        position: absolute;
-        left: 0.45rem;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: var(--border);
-      }
-
-      .phase-item {
-        position: relative;
-        margin-bottom: 2rem;
-        padding: 1.25rem;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-      }
-
-      .phase-item::before {
-        content: "";
-        position: absolute;
-        left: -1.65rem;
-        top: 1.4rem;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: var(--accent);
-        border: 2px solid var(--bg);
-      }
-
-      .phase-item.active {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 1px var(--accent-soft);
-      }
-
-      .phase-item.active::before {
-        box-shadow: 0 0 0 4px var(--accent-soft);
-      }
-
-      .phase-item h3 {
-        margin-top: 0;
-      }
-      .phase-item .scope {
-        font-size: 0.85rem;
-      }
-
-      .tech-stack {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin: 1.5rem 0;
-      }
-
-      .tech-item {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 1rem;
-      }
-
-      .tech-item .layer {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--accent);
-        margin-bottom: 0.35rem;
-      }
-
-      .tech-item .name {
+      td.yes {
+        color: var(--success);
         font-weight: 600;
-        font-size: 0.95rem;
       }
-      .tech-item .why {
-        font-size: 0.82rem;
+      td.no {
         color: var(--text-muted);
-        margin-top: 0.35rem;
+      }
+      td.mid {
+        color: var(--provider);
+        font-weight: 600;
       }
 
-      .entity-box {
-        display: inline-block;
-        background: var(--surface-2);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 0.5rem 0.85rem;
-        margin: 0.25rem;
-        font-size: 0.85rem;
-        font-family: var(--mono);
-      }
-
-      .flow-steps {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        align-items: center;
-        margin: 1rem 0;
-      }
-
-      .flow-step {
-        background: var(--surface-2);
-        padding: 0.5rem 0.85rem;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        border: 1px solid var(--border);
-      }
-
-      .flow-arrow {
-        color: var(--accent);
-        font-weight: bold;
-      }
-
-      .alert {
-        padding: 1rem 1.25rem;
-        border-radius: 8px;
-        margin: 1rem 0;
-        font-size: 0.9rem;
-        border-left: 4px solid;
-      }
-
-      .alert.info {
-        background: rgba(59, 130, 246, 0.1);
-        border-color: #3b82f6;
-      }
-      .alert.warn {
-        background: rgba(245, 158, 11, 0.1);
-        border-color: #f59e0b;
-      }
-      .alert.success {
-        background: rgba(34, 197, 94, 0.1);
-        border-color: #22c55e;
-      }
-
-      .out-of-scope {
-        opacity: 0.75;
-      }
-
-      .out-of-scope li {
-        text-decoration: line-through;
-        text-decoration-color: var(--danger);
-      }
-
-      /* Samari Studio — letterhead, fiel al formato de sus propuestas PDF */
-      .brand-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      /* Money */
+      .money-story {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
         gap: 1rem;
-        flex-wrap: wrap;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 0.9rem 1.5rem;
-        font-family: var(--mono);
+        margin: 1.25rem 0;
       }
-
-      .brand-mark {
+      .money-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.2rem 1.25rem;
+      }
+      .split-bar {
         display: flex;
-        align-items: center;
-        gap: 0.55rem;
-        font-size: 0.85rem;
+        height: 36px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 0.85rem 0 0.5rem;
+      }
+      .split-bar .plat {
+        width: 15%;
+        background: var(--accent);
+      }
+      .split-bar .host {
+        width: 85%;
+        background: var(--hoster);
+      }
+      .split-legend {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+      .split-legend b {
         color: var(--text);
+        font-weight: 600;
       }
-
-      .brand-logo {
-        height: 20px;
-        width: auto;
-        display: block;
-      }
-
-      .brand-logo-icon {
-        height: 16px;
-        width: auto;
-        display: block;
-      }
-
-      .brand-tagline {
-        font-size: 0.78rem;
-        letter-spacing: 0.02em;
-        color: var(--text-muted);
-      }
-
-      .brand-credit {
-        margin-top: 0.75rem;
+      .ex-line {
         display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        justify-content: center;
+        justify-content: space-between;
+        font-size: 0.88rem;
+        padding: 0.4rem 0;
+        border-bottom: 1px dashed var(--border);
         color: var(--text-muted);
-        font-family: var(--mono);
-        font-size: 0.78rem;
-        letter-spacing: 0.02em;
       }
-
-      .brand-credit strong {
+      .ex-line:last-child {
+        border-bottom: none;
+      }
+      .ex-line span:last-child {
         color: var(--text);
         font-weight: 500;
       }
+      .ex-total {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.65rem;
+        padding-top: 0.65rem;
+        border-top: 1px solid var(--border);
+        font-weight: 600;
+        color: var(--text);
+      }
 
-      /* Inversión — tarjeta de datos tipo "resumen ejecutivo" de Samari Studio */
-      .price-hero {
+      /* Pipeline */
+      .pipe {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 0;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.5rem;
+        margin: 1.1rem 0 0.4rem;
+      }
+      .pipe-s {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.75rem 0.6rem;
+        text-align: center;
+      }
+      .pipe-s .n {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--accent-light);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      .pipe-s strong {
+        display: block;
+        font-size: 0.78rem;
+        margin-bottom: 0.2rem;
+      }
+      .pipe-s span {
+        display: block;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        line-height: 1.35;
+      }
+      .pipe-s.hold {
+        border-color: var(--danger);
+      }
+      .pipe-s.pay {
+        border-color: var(--accent);
+      }
+
+      /* Checklist */
+      .checks {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+        margin: 1rem 0 0.4rem;
+      }
+      .ck {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.85rem;
+        font-size: 0.82rem;
+      }
+      .ck.done {
+        border-color: rgba(74, 222, 128, 0.45);
+      }
+      .ck.wait {
+        border-color: rgba(251, 191, 36, 0.45);
+      }
+      .ck .who {
+        font-size: 0.7rem;
+        margin-top: 0.3rem;
+      }
+      .result {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        margin: 1.5rem 0;
-        overflow: hidden;
+        padding: 0.9rem 1.1rem;
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        margin: 0.85rem 0 1.25rem;
+      }
+      .result b {
+        color: var(--text);
       }
 
+      /* Flow vertical */
+      .vflow {
+        margin: 1rem 0 1.5rem;
+      }
+      .vf {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 0.75rem;
+        margin-bottom: 0.15rem;
+      }
+      .vf-n {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        color: var(--accent-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+        position: relative;
+      }
+      .vf:not(:last-child) .vf-n::after {
+        content: "";
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        width: 2px;
+        height: calc(100% + 8px);
+        background: var(--border);
+        transform: translateX(-50%);
+      }
+      .vf-b {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+        margin-bottom: 0.7rem;
+      }
+      .vf-b strong {
+        display: block;
+        font-size: 0.92rem;
+        margin-bottom: 0.15rem;
+      }
+      .vf-b p {
+        font-size: 0.82rem;
+        margin: 0;
+      }
+
+      .pay-visual {
+        margin: 1rem 0 1.4rem;
+      }
+      .pay-row {
+        margin-bottom: 0.85rem;
+      }
+      .pay-row .lbl {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        margin-bottom: 0.35rem;
+        color: var(--text-muted);
+      }
+      .pay-row .lbl b {
+        color: var(--text);
+      }
+      .bar {
+        height: 18px;
+        background: var(--surface-2);
+        border-radius: 999px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+
+      .price-hero {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin: 1.25rem 0;
+        overflow: hidden;
+      }
       .price-row {
-        padding: 1.25rem 1.5rem;
+        padding: 1.2rem 1.3rem;
         border-right: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
       }
       .price-row:last-child {
         border-right: none;
       }
-
       .price-label {
         font-family: var(--mono);
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         letter-spacing: 0.04em;
         color: var(--accent-light);
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.35rem;
       }
-
       .price-value {
-        font-family: var(--font);
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         font-weight: 500;
-        color: var(--text);
-        letter-spacing: -0.01em;
       }
-
       .price-value strong {
         font-weight: 700;
       }
-
       .price-sub {
         margin-top: 0.2rem;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         color: var(--text-muted);
       }
 
-      .price-callout {
-        border-left: 3px solid var(--accent);
+      .include-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin: 1rem 0;
+      }
+      .inc {
         background: var(--surface);
-        padding: 1rem 1.25rem;
-        margin: 1.5rem 0;
-        font-size: 0.95rem;
-        color: var(--text-muted);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.95rem 1.05rem;
+      }
+      .inc strong {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      .inc p {
+        font-size: 0.82rem;
+        margin: 0;
       }
 
-      .price-callout strong {
-        color: var(--text);
-        font-weight: 600;
+      .note {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        margin-top: 1.5rem;
       }
 
       footer {
@@ -661,1009 +767,1046 @@
         color: var(--text-muted);
         font-size: 0.85rem;
       }
+      .brand-credit {
+        margin-top: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+      }
 
-      @media (max-width: 640px) {
-        .hero {
-          padding: 2.5rem 1rem 2rem;
+      @media (max-width: 860px) {
+        .kpi-grid,
+        .journey,
+        .role-grid,
+        .pipe,
+        .checks,
+        .anatomy,
+        .sites,
+        .money-story,
+        .price-hero,
+        .include-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .anatomy {
+          grid-template-columns: 1fr;
+        }
+        .an-plus,
+        .an-eq {
+          display: none;
+        }
+      }
+      @media (max-width: 560px) {
+        .kpi-grid,
+        .journey,
+        .role-grid,
+        .pipe,
+        .checks,
+        .sites,
+        .money-story,
+        .price-hero,
+        .include-grid {
+          grid-template-columns: 1fr;
         }
         main {
           padding: 1.5rem 1rem 3rem;
         }
-        table {
-          font-size: 0.8rem;
-        }
-        th,
-        td {
-          padding: 0.5rem;
-        }
       }
-
       @media print {
         nav.toc {
           display: none;
         }
+        body {
+          background: #fff;
+          color: #111;
+        }
       }
-          .compare {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1rem;
-        margin: 1.5rem 0;
-      }
-      .compare-col {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 1.25rem;
-      }
-      .compare-col h3 { margin: 0 0 0.75rem; font-size: 1rem; }
-      .compare-col ul { margin: 0; padding-left: 1.1rem; color: var(--text-muted); font-size: 0.9rem; }
-      .compare-col li { margin-bottom: 0.4rem; }
-      .compare-col.f1 { border-top: 3px solid var(--accent); }
-      .compare-col.f2 { border-top: 3px solid #3b82f6; }
-      .compare-col.f3 { border-top: 3px solid #a855f7; }
-      .kpi-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1rem;
-        margin: 1.5rem 0;
-      }
-      .kpi {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-top: 3px solid var(--accent);
-        border-radius: var(--radius);
-        padding: 1.1rem;
-      }
-      .kpi strong { display: block; font-size: 1.15rem; color: var(--accent-light); margin-bottom: 0.25rem; }
-      .kpi span { font-size: 0.82rem; color: var(--text-muted); }
-      .tag {
-        display: inline-block;
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        padding: 0.15rem 0.45rem;
-        border-radius: 4px;
-        margin-bottom: 0.5rem;
-      }
-      .tag.f1 { background: var(--accent-soft); color: var(--accent-light); }
-      .tag.f2 { background: rgba(59, 130, 246, 0.18); color: #93c5fd; }
-      .tag.f3 { background: rgba(168, 85, 247, 0.18); color: #d8b4fe; }
-      .glossary {
-        display: grid;
-        grid-template-columns: 160px 1fr;
-        gap: 0.6rem 1rem;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 1.25rem;
-        margin: 1.25rem 0;
-        font-size: 0.92rem;
-      }
-      .glossary dt { color: var(--accent-light); font-weight: 600; }
-      .glossary dd { color: var(--text-muted); margin: 0; }
-      h2.f2 { border-color: #3b82f6; }
-      h2.f3 { border-color: #a855f7; }
-
     </style>
   </head>
   <body>
     <div class="brand-bar">
       <div class="brand-mark">
-        <img class="brand-logo" src="data:image/webp;base64,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" alt="Samari Studio" />
+        <img
+          class="brand-logo"
+          src="data:image/webp;base64,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"
+          alt="Samari Studio"
+        />
       </div>
-      <div class="brand-tagline">Septiembre 2026 · Propuesta · Confidencial</div>
+      <div class="brand-tagline">
+        Septiembre 2026 · Propuesta · Confidencial
+      </div>
     </div>
 
     <header class="hero">
       <h1>Plataforma de <span>Experiencias de Lujo</span></h1>
       <p class="subtitle">
-        Propuesta de producto y alcance. Un marketplace premium donde el viajero
-        reserva una casa y los servicios que la rodean — yate, chef, transporte —
-        en una sola experiencia. Este documento está pensado para validar el
-        negocio, no para implementar código.
+        El viajero paga el <strong>100% al reservar</strong> en la web.
+        Operaciones aprueba, cura y libera el dinero al hoster cuando todo se
+        cumplió.
       </p>
       <div class="hero-meta">
-        <span class="badge gold">Versión 2.0</span>
-        <span class="badge">Fase 1 · Lanzamiento</span>
-        <span class="badge">Fases 2 y 3 · Crecimiento</span>
-        <span class="badge">Septiembre 2026</span>
+        <span class="badge gold">MVP · Lanzamiento</span>
+        <span class="badge">100% al reservar · USD</span>
+        <span class="badge">$35,000 USD</span>
+        <span class="badge">4–5 meses</span>
       </div>
     </header>
 
     <nav class="toc">
       <ul>
-        <li><a href="#resumen">Resumen</a></li>
-        <li><a href="#vision">Visión</a></li>
-        <li><a href="#roles">Quién usa la plataforma</a></li>
-        <li><a href="#dinero">Cómo se cobra y se paga</a></li>
-        <li><a href="#reglas">Reglas del negocio</a></li>
-        <li><a href="#fase1">Fase 1</a></li>
-        <li><a href="#fase2">Fase 2</a></li>
-        <li><a href="#fase3">Fase 3</a></li>
+        <li><a href="#resumen">En una página</a></li>
+        <li><a href="#producto">El producto</a></li>
+        <li><a href="#roles">Quién hace qué</a></li>
+        <li><a href="#dinero">El dinero</a></li>
+        <li><a href="#operacion">Cómo opera</a></li>
+        <li><a href="#reglas">Reglas</a></li>
         <li><a href="#inversion">Inversión</a></li>
       </ul>
     </nav>
 
     <main>
       <section id="resumen">
-        <h2>1. Resumen ejecutivo</h2>
+        <h2>1. En una página</h2>
         <p class="lead">
-          Construimos una plataforma de experiencias de lujo ancladas a una
-          propiedad. El cliente no compra un yate suelto ni un chef suelto: reserva
-          una experiencia completa, la personaliza y paga en el momento. El hoster
-          recibe su dinero solo cuando la estancia terminó y todos los servicios
-          contratados se marcaron como realizados.
+          Se lanza un marketplace de experiencias premium: una casa + servicios
+          (yate, chef, traslado). El cliente paga el
+          <strong>100% en el checkout</strong>
+          — sin anticipos ni pagos después. La plataforma retiene el dinero y se
+          lo paga al hoster cuando todo se cumplió.
         </p>
 
         <div class="kpi-grid">
           <div class="kpi">
-            <strong>2 superficies web</strong>
-            <span>Admin (incluye hoster y provider) · Sitio del cliente</span>
+            <strong>2 webs</strong>
+            <span>Sitio del viajero + portal de operaciones</span>
           </div>
           <div class="kpi">
-            <strong>Pago al reservar</strong>
-            <span>El cliente liquida el 100% en dólares</span>
+            <strong>100% al reservar</strong>
+            <span
+              >Todo en USD, en una sola transacción. Sin pagos pendientes.</span
+            >
           </div>
           <div class="kpi">
-            <strong>Pago al hoster al final</strong>
-            <span>Solo si la reserva está completa y los servicios hechos</span>
+            <strong>15% comisión</strong>
+            <span>Se descuenta al pagar al hoster, no al viajero</span>
           </div>
           <div class="kpi">
-            <strong>Reviews desde el día uno</strong>
-            <span>Reputación visible en cada experiencia</span>
+            <strong>$35,000</strong>
+            <span>Inversión del lanzamiento · 4–5 meses</span>
           </div>
         </div>
 
-        <div class="compare">
-          <div class="compare-col f1">
-            <h3>Fase 1 — Lanzar</h3>
-            <ul>
-              <li>Sitio web del cliente: explorar, reservar, pagar, reseñar</li>
-              <li>Portal de operaciones (admin + hoster + provider)</li>
-              <li>Registro de hosters y providers, con aprobación</li>
-              <li>Reviews y reputación</li>
-              <li>Pago del viajero al reservar; pago al hoster al cerrar</li>
-            </ul>
+        <h3>El viaje completo, de punta a punta</h3>
+        <p class="caption">
+          Si este recorrido funciona, el negocio ya puede cobrar.
+        </p>
+        <div class="journey">
+          <div class="j-step">
+            <div class="n">01</div>
+            <h4>Admin aprueba</h4>
+            <p>Cuentas, casas, fotos y servicios. Nada se publica solo.</p>
           </div>
-          <div class="compare-col f2">
-            <h3>Fase 2 — Llevarlo al bolsillo</h3>
-            <ul>
-              <li>App nativa del cliente (iPhone y Android)</li>
-              <li>Notificaciones en el teléfono</li>
-              <li>Chat con el hoster</li>
-              <li>Más monedas y precios por temporada</li>
-              <li>IA para buscar mejor y revisar contenido más rápido</li>
-            </ul>
+          <div class="j-step">
+            <div class="n">02</div>
+            <h4>Se arma el paquete</h4>
+            <p>
+              Hoster propone la experiencia. Puede sumar servicios de un
+              provider.
+            </p>
           </div>
-          <div class="compare-col f3">
-            <h3>Fase 3 — Escalar</h3>
-            <ul>
-              <li>App nativa del hoster y del provider</li>
-              <li>Pago automático a hoster y a cada provider</li>
-              <li>Marketplace interno hoster ↔ provider</li>
-              <li>Experiencias de varios días, loyalty, analítica</li>
-              <li>IA: asistente para crear experiencias y concierge</li>
-            </ul>
+          <div class="j-step">
+            <div class="n">03</div>
+            <h4>Cliente reserva</h4>
+            <p>
+              Explora, personaliza y paga el 100% en checkout. Sin saldo
+              pendiente.
+            </p>
           </div>
-        </div>
-
-        <div class="alert info">
-          <strong>Qué se decide en esta propuesta:</strong> el modelo de negocio,
-          quién hace qué, cuándo se cobra, cuándo se paga, y qué entra en cada
-          fase. La tecnología se elige después, al arrancar el desarrollo.
+          <div class="j-step">
+            <div class="n">04</div>
+            <h4>Se coordinan</h4>
+            <p>
+              Mensajes sencillos entre cliente y hoster, dentro de la reserva.
+            </p>
+          </div>
+          <div class="j-step">
+            <div class="n">05</div>
+            <h4>Check-in / out</h4>
+            <p>
+              Hoster abre y cierra la estancia. Cada quien marca lo que hizo.
+            </p>
+          </div>
+          <div class="j-step">
+            <div class="n">06</div>
+            <h4>Todo hecho</h4>
+            <p>Casa + chef + yate + traslado. Si falta uno, no se paga.</p>
+          </div>
+          <div class="j-step">
+            <div class="n">07</div>
+            <h4>Admin libera</h4>
+            <p>Revisa y transfiere el neto al hoster (total menos 15%).</p>
+          </div>
+          <div class="j-step">
+            <div class="n">08</div>
+            <h4>Reseña</h4>
+            <p>El viajero califica. Esa reputación se ve en la ficha.</p>
+          </div>
         </div>
       </section>
 
-      <section id="vision">
-        <h2>2. Qué estamos construyendo</h2>
-        <p class="lead">
-          Un marketplace de lujo inspirado en la fluidez de Airbnb, pero solo para
-          experiencias premium. Cada publicación es una <strong>experiencia
-          completa</strong>: una casa (o villa, penthouse, hacienda) más los
-          servicios que el viajero puede incluir o quitar.
-        </p>
-        <p>
-          El cliente nunca ve un catálogo de vendors sueltos. Ve “Villa en Tulum
-          con yate al atardecer y chef privado”. Si quita el yate, el precio baja
-          en el acto. Si el chef es parte del concepto, no se puede quitar.
+      <section id="producto">
+        <h2>2. Qué se está construyendo</h2>
+        <div class="takeaway">
+          <span class="k">Idea</span>
+          <span
+            >El cliente no compra un yate suelto. Compra “Villa en Tulum con
+            yate y chef”. Si quita el yate, el precio baja al instante. Si el
+            chef es parte del concepto, no se puede quitar.</span
+          >
+        </div>
+
+        <h3>Las 4 palabras que hay que compartir</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Palabra</th>
+              <th>Qué es</th>
+              <th>Se vende sola?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Propiedad</strong></td>
+              <td>La casa, villa o hacienda. Es el ancla de todo.</td>
+              <td class="no">No. Sin casa no hay publicación.</td>
+            </tr>
+            <tr>
+              <td><strong>Amenidades</strong></td>
+              <td>Lo que ya viene con la casa: piscina, WiFi, aire.</td>
+              <td class="no">No. Van incluidas. No tienen precio aparte.</td>
+            </tr>
+            <tr>
+              <td><strong>Servicios</strong></td>
+              <td>Lo que se suma o se quita: yate, chef, traslado.</td>
+              <td class="mid">Sí, pero solo dentro de una experiencia.</td>
+            </tr>
+            <tr>
+              <td><strong>Experiencia</strong></td>
+              <td>
+                Lo que ve el viajero: 1 casa + servicios + fechas + precio.
+              </td>
+              <td class="yes">Sí. Esto es lo que se reserva.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Cómo se arma una experiencia</h3>
+        <div class="anatomy">
+          <div class="an-box house">
+            <h4>1 casa</h4>
+            <p>
+              Del hoster. Trae amenidades incluidas. Admin la aprueba antes de
+              publicarla.
+            </p>
+          </div>
+          <div class="an-plus">+</div>
+          <div class="an-box svc">
+            <h4>Servicios</h4>
+            <p>
+              Del hoster o de un provider. Obligatorios u opcionales. Cada uno
+              con su precio.
+            </p>
+          </div>
+          <div class="an-eq">=</div>
+          <div class="an-box exp">
+            <h4>Experiencia</h4>
+            <p>
+              El paquete que el cliente explora, personaliza, paga y reseña.
+            </p>
+          </div>
+        </div>
+        <p class="caption">
+          Un provider sin casa sí da de alta sus servicios. No publica
+          experiencias. Un hoster las pide y admin une el vínculo.
         </p>
 
-        <dl class="glossary">
-          <dt>Propiedad</dt>
-          <dd>La casa. Es el ancla obligatorio de toda experiencia.</dd>
-          <dt>Amenidades</dt>
-          <dd>
-            Lo que ya viene con la casa: piscina, WiFi, aire, estacionamiento.
-            No se venden por separado.
-          </dd>
-          <dt>Servicios</dt>
-          <dd>
-            Lo que se agrega o se quita: yate, chef, transporte, músico,
-            helicóptero. Tienen precio propio.
-          </dd>
-          <dt>Experiencia</dt>
-          <dd>
-            El paquete que ve el cliente: 1 propiedad + los servicios
-            obligatorios u opcionales + calendario + precio.
-          </dd>
-        </dl>
-
-        <div class="alert success">
-          <strong>Principio rector:</strong> sin casa aprobada no hay experiencia
-          publicada. Los providers (yate, chef, etc.) alimentan a los hosters por
-          dentro; el viajero solo ve el paquete unificado.
+        <h3>Dos sitios, no cuatro</h3>
+        <div class="sites">
+          <div class="site pub">
+            <span class="chip customer">Público</span>
+            <h3>Sitio del cliente</h3>
+            <p>Para vender. Se ve y se siente como una marca de lujo.</p>
+            <ul>
+              <li>Explorar y filtrar experiencias</li>
+              <li>Personalizar servicios</li>
+              <li>Reservar y pagar el 100% en checkout</li>
+              <li>Mensajes y reseñas</li>
+            </ul>
+          </div>
+          <div class="site ops">
+            <span class="chip admin">Interno</span>
+            <h3>Portal de operaciones</h3>
+            <p>Un solo login. El menú cambia según el rol.</p>
+            <ul>
+              <li>Admin: aprueba, cura, paga, resuelve</li>
+              <li>Hoster: casa, reservas, check-in, mensajes</li>
+              <li>Provider: sus servicios y su checklist</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section id="roles">
-        <h2>3. Quién usa la plataforma</h2>
-        <p>
-          En Fase 1 hay <strong>dos sitios web</strong>, no cuatro. El viajero
-          entra al sitio público. Admin, hoster y provider trabajan dentro del
-          <strong>mismo portal de operaciones</strong>, cada uno viendo solo lo
-          que le corresponde.
+        <h2>3. Quién hace qué</h2>
+        <p class="lead">
+          Cuatro roles. Cada uno ve solo lo suyo. El viajero nunca entra al
+          panel de operaciones.
         </p>
 
-        <div class="card-grid">
-          <div class="card admin">
-            <div class="icon">⚙️</div>
-            <h3>Administración</h3>
+        <div class="role-grid">
+          <div class="role admin">
+            <div class="dot"></div>
+            <h3>Admin</h3>
             <p>
-              Aprueba cuentas, propiedades y experiencias. Revisa que los
-              servicios se hayan cumplido. Libera el pago al hoster. Resuelve
-              disputas y cuida el estándar de lujo.
+              Manda en calidad y en dinero. Aprueba personas, casas y fotos.
+              Libera pagos. Resuelve reclamos.
             </p>
           </div>
-          <div class="card hoster">
-            <div class="icon">🏡</div>
+          <div class="role hoster">
+            <div class="dot"></div>
             <h3>Hoster</h3>
             <p>
-              Dueño de la casa. Crea experiencias, elige servicios propios o de
-              terceros, recibe reservas, hace check-in y marca lo que ya se
-              cumplió. Entra al portal de operaciones, no a un sitio aparte.
+              Dueño de la casa. Propone experiencias, responde mensajes y hace
+              check-in / check-out.
             </p>
           </div>
-          <div class="card provider">
-            <div class="icon">🛥️</div>
+          <div class="role provider">
+            <div class="dot"></div>
             <h3>Provider</h3>
             <p>
-              Ofrece un servicio (yate, chef, traslado) sin tener casa. Se
-              registra, espera aprobación y marca sus servicios como realizados.
-              Tampoco tiene portal propio: usa el de operaciones.
+              Sin casa. Da de alta yate, chef, traslado. Marca sus servicios
+              como hechos. No publica al cliente.
             </p>
           </div>
-          <div class="card customer">
-            <div class="icon">✨</div>
+          <div class="role customer">
+            <div class="dot"></div>
             <h3>Cliente</h3>
             <p>
-              Explora, personaliza, reserva, paga, viaja y deja reseña. En Fase 1
-              lo hace desde la web. En Fase 2, también desde la app del teléfono.
+              Explora, personaliza, paga, escribe al hoster y deja reseña. Todo
+              en la web pública.
             </p>
           </div>
         </div>
 
-        <h3>Cómo se relacionan</h3>
-        <div class="flow-steps">
-          <span class="flow-step">Admin aprueba a todos</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Hoster arma la experiencia</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Puede sumar servicios de un provider</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">El cliente reserva el paquete</span>
+        <h3>Tabla rápida — quién puede y quién no</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Acción</th>
+              <th>Admin</th>
+              <th>Hoster</th>
+              <th>Provider</th>
+              <th>Cliente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Publicar una experiencia</td>
+              <td class="yes">Sí (publica)</td>
+              <td class="mid">Propone</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+            </tr>
+            <tr>
+              <td>Dar de alta servicios</td>
+              <td class="yes">Sí</td>
+              <td class="yes">Sí, los suyos</td>
+              <td class="yes">Sí, los suyos</td>
+              <td class="no">No</td>
+            </tr>
+            <tr>
+              <td>Registrar una casa</td>
+              <td class="yes">Aprueba</td>
+              <td class="yes">Sí</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+            </tr>
+            <tr>
+              <td>Reservar y pagar</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+              <td class="yes">Sí</td>
+            </tr>
+            <tr>
+              <td>Escribir mensajes</td>
+              <td class="mid">Lee</td>
+              <td class="yes">Sí</td>
+              <td class="no">No</td>
+              <td class="yes">Sí</td>
+            </tr>
+            <tr>
+              <td>Check-in / check-out</td>
+              <td class="no">Supervisa</td>
+              <td class="yes">Sí</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+            </tr>
+            <tr>
+              <td>Marcar servicio como hecho</td>
+              <td class="no">Ve la lista</td>
+              <td class="yes">Lo suyo</td>
+              <td class="yes">Lo suyo</td>
+              <td class="no">No</td>
+            </tr>
+            <tr>
+              <td>Liberar el pago</td>
+              <td class="yes">Sí</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+            </tr>
+            <tr>
+              <td>Resolver una disputa</td>
+              <td class="yes">Sí</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+              <td class="mid">La abre</td>
+            </tr>
+            <tr>
+              <td>Banear cuentas o fichas</td>
+              <td class="yes">Sí</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+              <td class="no">No</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Cómo entra un provider (sin casa)</h3>
+        <div class="vflow">
+          <div class="vf">
+            <div class="vf-n">1</div>
+            <div class="vf-b">
+              <strong>Se da de alta y espera OK</strong>
+              <p>
+                Admin crea la cuenta o aprueba la solicitud. Sin eso, no carga
+                nada.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">2</div>
+            <div class="vf-b">
+              <strong>Carga sus servicios</strong>
+              <p>
+                Precio, descripción, fotos, disponibilidad. Quedan en revisión.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">3</div>
+            <div class="vf-b">
+              <strong>Admin aprueba cada servicio</strong>
+              <p>
+                Cura fotos y texto. Si no cumple el estándar, no entra al
+                catálogo.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">4</div>
+            <div class="vf-b">
+              <strong>Un hoster pide usarlo</strong>
+              <p>
+                Admin acepta el vínculo. Recién entonces el viajero lo ve dentro
+                del paquete.
+              </p>
+            </div>
+          </div>
         </div>
-        <p>
-          Un hoster es un provider que además tiene casa. Un provider sin casa
-          no puede publicar experiencias. El cliente no ve esa distinción: ve
-          una sola oferta.
-        </p>
       </section>
 
       <section id="dinero">
         <h2>4. Cómo se cobra y se paga</h2>
-        <p class="lead">
-          Hay dos momentos de dinero, y no son el mismo. El viajero paga al
-          reservar. El hoster cobra cuando todo salió bien.
-        </p>
-
-        <div class="flow-steps">
-          <span class="flow-step">Cliente paga el 100%</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">El dinero queda retenido</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Check-in</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Cada servicio se marca como hecho</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Reserva completada</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step" style="border-color: var(--accent); color: var(--accent-light)">Admin libera el pago al hoster</span>
+        <div class="takeaway">
+          <span class="k">Regla</span>
+          <span
+            >Hay dos momentos de dinero. El viajero paga el
+            <strong>100% al reservar</strong>. El hoster cobra cuando la
+            estancia y todos los servicios están hechos. No es el mismo
+            día.</span
+          >
         </div>
 
+        <h3>Pago del viajero — simple y claro</h3>
         <table>
           <thead>
             <tr>
-              <th>Estado de la reserva</th>
-              <th>Qué significa</th>
+              <th>Al reservar (checkout)</th>
+              <th>Después de reservar</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Esperando pago</td>
-              <td>El cliente eligió fechas; tiene unos minutos para pagar. Si no, se libera el calendario.</td>
+              <td class="yes">
+                <strong>100% en USD</strong> — villa + servicios elegidos +
+                tarifas
+              </td>
+              <td class="no">
+                <strong>Nada pendiente de cobrar</strong> al viajero
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="caption">
+          No hay anticipo parcial, no hay “paga el resto antes del viaje”, no
+          hay cuotas ni pagar al llegar. O paga todo en checkout, o la reserva
+          no se confirma.
+        </p>
+
+        <h3>Ejemplo con números (para que se entienda)</h3>
+        <div class="money-story">
+          <div class="money-card">
+            <span class="chip customer">El viajero ve y paga</span>
+            <div class="ex-line">
+              <span>Villa 4 noches</span><span>$8,000</span>
+            </div>
+            <div class="ex-line">
+              <span>Chef (obligatorio)</span><span>$800</span>
+            </div>
+            <div class="ex-line">
+              <span>Yate 4 horas (opcional)</span><span>$1,200</span>
+            </div>
+            <div class="ex-total">
+              <span>100% hoy en checkout</span><span>$10,000</span>
+            </div>
+            <p class="caption" style="margin: 0.7rem 0 0">
+              Un solo cargo. Si quita el yate, paga $8,800. El chef no se puede
+              quitar. No queda saldo para después.
+            </p>
+          </div>
+          <div class="money-card">
+            <span class="chip admin">Cuando todo se cumplió</span>
+            <div class="split-bar" title="15% plataforma, 85% hoster">
+              <div class="plat"></div>
+              <div class="host"></div>
+            </div>
+            <div class="split-legend">
+              <span>Plataforma <b>15% · $1,500</b></span>
+              <span>Hoster <b>85% · $8,500</b></span>
+            </div>
+            <p style="margin: 0.9rem 0 0; font-size: 0.82rem">
+              Una sola transferencia al hoster. Si usó chef o yate de un
+              tercero, le paga a ese provider por fuera. La marca de “hecho” es
+              evidencia, no un cobro automático.
+            </p>
+          </div>
+        </div>
+
+        <h3>Estados de una reserva</h3>
+        <p class="caption">
+          El dinero no se mueve al hoster hasta el último paso verde. Una
+          disputa lo congela.
+        </p>
+        <div class="pipe">
+          <div class="pipe-s">
+            <span class="n">1</span>
+            <strong>Esperando pago</strong>
+            <span>Minutos para pagar. Si no, se libera el calendario.</span>
+          </div>
+          <div class="pipe-s">
+            <span class="n">2</span>
+            <strong>Confirmada</strong>
+            <span
+              >Pagó el 100%. El dinero está retenido. Nada pendiente al
+              viajero.</span
+            >
+          </div>
+          <div class="pipe-s">
+            <span class="n">3</span>
+            <strong>En curso</strong>
+            <span>Check-in hecho. La estancia empezó.</span>
+          </div>
+          <div class="pipe-s">
+            <span class="n">4</span>
+            <strong>Completada</strong>
+            <span>Todo marcado como hecho. Sin esto, no hay payout.</span>
+          </div>
+          <div class="pipe-s pay">
+            <span class="n">5</span>
+            <strong>Pagada</strong>
+            <span>Admin libera el neto al hoster.</span>
+          </div>
+          <div class="pipe-s hold">
+            <span class="n">—</span>
+            <strong>Disputa</strong>
+            <span>Congela el pago hasta que admin cierre el caso.</span>
+          </div>
+        </div>
+
+        <h3>La lista que ve admin antes de pagar</h3>
+        <div class="checks">
+          <div class="ck done">
+            <strong>✓ Estancia</strong>
+            <div class="who"><span class="chip hoster">Hoster</span></div>
+          </div>
+          <div class="ck done">
+            <strong>✓ Chef</strong>
+            <div class="who"><span class="chip provider">Provider</span></div>
+          </div>
+          <div class="ck done">
+            <strong>✓ Yate 4 h</strong>
+            <div class="who"><span class="chip provider">Provider</span></div>
+          </div>
+          <div class="ck wait">
+            <strong>○ Traslado</strong>
+            <div class="who"><span class="chip provider">Provider</span></div>
+          </div>
+        </div>
+        <div class="result">
+          <b>3 de 4 hechos → no se completa ni se paga.</b>
+          Cuando el traslado se marca, admin puede liberar los $8,500. Nadie
+          marca el trabajo de otro.
+        </div>
+      </section>
+
+      <section id="operacion">
+        <h2>5. Cómo opera el día a día</h2>
+
+        <h3>Admin — centro de control</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Área</th>
+              <th>Qué hace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Aprobaciones</strong></td>
+              <td>
+                Hosters, providers, casas, servicios y experiencias. Nada llega
+                al cliente sin este paso.
+              </td>
             </tr>
             <tr>
-              <td>Confirmada</td>
-              <td>Ya pagó. El dinero está en la plataforma. Todavía no se le paga al hoster.</td>
+              <td><strong>Catálogo</strong></td>
+              <td>
+                Categorías, servicios y fichas. Puede armar o editar la versión
+                final.
+              </td>
             </tr>
             <tr>
-              <td>En curso</td>
-              <td>El hoster hizo check-in. La estancia empezó.</td>
+              <td><strong>Fotos</strong></td>
+              <td>
+                Orden, recorte básico, rechazo si no cumplen el estándar
+                premium.
+              </td>
             </tr>
             <tr>
-              <td>Completada</td>
-              <td>Todos los servicios de esa reserva están marcados como realizados. Sin esto, no hay pago al hoster.</td>
+              <td><strong>Reservas y pagos</strong></td>
+              <td>Ve estados, checklist y el botón para liberar el payout.</td>
             </tr>
             <tr>
-              <td>Pagada al hoster</td>
-              <td>Admin revisó la evidencia y liberó el neto (total menos comisión).</td>
+              <td><strong>Disputas</strong></td>
+              <td>Investiga, puede congelar el pago y cierra el caso.</td>
             </tr>
             <tr>
-              <td>En disputa</td>
-              <td>Hay un reclamo. El pago al hoster queda bloqueado hasta que admin resuelva.</td>
+              <td><strong>Mensajes</strong></td>
+              <td>
+                Lee el hilo de la reserva. No escribe salvo que haga falta.
+              </td>
             </tr>
             <tr>
-              <td>Cancelada</td>
-              <td>Se aplica la política de la experiencia (flexible, moderada o estricta) y el reembolso que corresponda.</td>
+              <td><strong>Métricas</strong></td>
+              <td>
+                Reservas del mes, ingresos, comisión, pendientes de aprobación.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Moderación</strong></td>
+              <td>Banear cuentas, casas o experiencias. Ocultar reseñas.</td>
             </tr>
           </tbody>
         </table>
 
-        <div class="diagram">
-          <pre>
-Reserva de ejemplo — lista que ve administración
-────────────────────────────────────────────────
-Hecho   Estancia (casa)         Hoster
-Hecho   Chef cena privada       Provider
-Hecho   Yate 4 horas            Provider
-Pendiente  Traslado aeropuerto  Provider
+        <h3>Hoster y provider — en campo</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Área</th>
+              <th>Hoster (con casa)</th>
+              <th>Provider (sin casa)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Da de alta</strong></td>
+              <td>Casa + amenidades + sus servicios + propone experiencia</td>
+              <td>Solo sus servicios (yate, chef, traslado…)</td>
+            </tr>
+            <tr>
+              <td><strong>Espera a admin</strong></td>
+              <td>Cuenta, casa, servicios y publicación</td>
+              <td>Cuenta y cada servicio</td>
+            </tr>
+            <tr>
+              <td><strong>Reservas</strong></td>
+              <td>Las suyas: fechas, huésped, paquete</td>
+              <td>Solo aquellas donde participa</td>
+            </tr>
+            <tr>
+              <td><strong>Operación</strong></td>
+              <td>Check-in, check-out, marca casa y lo suyo</td>
+              <td>Marca solo su servicio como hecho</td>
+            </tr>
+            <tr>
+              <td><strong>Mensajes</strong></td>
+              <td>Habla con el cliente</td>
+              <td>No tiene hilo. Coordina vía hoster</td>
+            </tr>
+            <tr>
+              <td><strong>No hace</strong></td>
+              <td>No publica solo, no libera pagos, no resuelve disputas</td>
+              <td>No publica experiencias ni vende suelto al viajero</td>
+            </tr>
+          </tbody>
+        </table>
 
-3 de 4 hechos  →  no se puede completar ni pagar
-4 de 4 hechos  →  reserva completada  →  Admin libera el pago al hoster
-          </pre>
+        <h3>Cliente — reservar y pagar</h3>
+        <div class="vflow">
+          <div class="vf">
+            <div class="vf-n">1</div>
+            <div class="vf-b">
+              <strong>Explora</strong>
+              <p>
+                Lista con filtros: destino, fechas, huéspedes, precio. Web en
+                celular y escritorio.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">2</div>
+            <div class="vf-b">
+              <strong>Personaliza</strong>
+              <p>
+                Ve amenidades de la casa. Quita servicios opcionales. El precio
+                se actualiza al momento.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">3</div>
+            <div class="vf-b">
+              <strong>Paga el 100% en USD, de una vez</strong>
+              <p>
+                Todo en checkout: sin anticipo, sin segundo pago, sin cuotas.
+                Confirmación por email. Las fechas se bloquean unos minutos
+                mientras paga.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">4</div>
+            <div class="vf-b">
+              <strong>Escribe al hoster</strong>
+              <p>
+                Solo con reserva confirmada. Texto e historial. Si el hoster no
+                está en línea, aviso por email.
+              </p>
+            </div>
+          </div>
+          <div class="vf">
+            <div class="vf-n">5</div>
+            <div class="vf-b">
+              <strong>Viaja y reseña</strong>
+              <p>
+                1 a 5 estrellas + comentario, entre 24 horas y 30 días después
+                del check-out.
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div class="price-callout">
-          <strong>Fase 1 — una sola transferencia al hoster.</strong>
-          El hoster recibe el total de la reserva menos la comisión de la
-          plataforma (15% por defecto). Si usó un chef o un yate de un tercero,
-          le paga a ese provider por fuera. En Fase 3 la plataforma reparte
-          automáticamente a cada uno.
-        </div>
-
-        <h3>Reviews y reputación (desde Fase 1)</h3>
-        <p>
-          El cliente puede dejar reseña entre 24 horas y 30 días después de que
-          la reserva esté completada (o ya pagada al hoster). Una reseña por
-          reserva: calificación 1–5, comentario y notas opcionales de limpieza,
-          servicios y ubicación. Esa reputación se ve en la ficha de la
-          experiencia y ayuda a decidir a los siguientes viajeros. Admin puede
-          ocultar una reseña si rompe las reglas.
-        </p>
       </section>
 
       <section id="reglas">
-        <h2>5. Reglas del negocio</h2>
-        <p>Estas reglas son el contrato operativo. Si algo no está aquí, no se asume.</p>
-
-        <h4>Cuentas</h4>
-        <ul class="rule-list">
-          <li>
-            <span class="id">01</span>
-            <strong>Una cuenta, un rol en Fase 1</strong>
-            El mismo email no puede ser hoster y cliente a la vez. Eso se abre
-            más adelante. El viajero se registra solo. Hoster y provider
-            solicitan alta y esperan aprobación.
-          </li>
-          <li>
-            <span class="id">02</span>
-            <strong>El provider se puede registrar solo</strong>
-            Completa su perfil y catálogo de servicios. Queda en revisión hasta
-            que admin apruebe. Sin aprobación no aparece para ningún hoster.
-          </li>
-          <li>
-            <span class="id">03</span>
-            <strong>Sin casa aprobada no hay experiencia</strong>
-            Orden: se registra el hoster → admin aprueba la cuenta → registra la
-            propiedad → admin aprueba la casa → recién entonces puede publicar.
-          </li>
-        </ul>
-
-        <h4>Catálogo</h4>
-        <ul class="rule-list">
-          <li>
-            <span class="id">04</span>
-            <strong>Una experiencia = una sola propiedad</strong>
-            No hay paquetes multi-villa en el lanzamiento.
-          </li>
-          <li>
-            <span class="id">05</span>
-            <strong>Solo el dueño de la casa publica sobre ella</strong>
-            Nadie usa la propiedad de otro hoster.
-          </li>
-          <li>
-            <span class="id">06</span>
-            <strong>Los servicios de terceros no se venden sueltos al viajero</strong>
-            El cliente ve el paquete. El vínculo hoster–provider se gestiona
-            adentro, con aprobación de admin.
-          </li>
-          <li>
-            <span class="id">07</span>
-            <strong>Si un servicio es obligatorio, el cliente no lo puede quitar</strong>
-            Los opcionales sí, y el precio se recalcula al instante.
-          </li>
-          <li>
-            <span class="id">08</span>
-            <strong>Nada se publica sin revisión</strong>
-            Admin valida fotos, texto, precio y que se sienta a la altura de la
-            marca. El hoster puede guardar borradores.
-          </li>
-          <li>
-            <span class="id">09</span>
-            <strong>Mínimo para pedir publicación</strong>
-            5 fotos, descripción, mapa, precio, calendario y al menos un
-            servicio.
-          </li>
-        </ul>
-
-        <h4>Reserva, pago y reputación</h4>
-        <ul class="rule-list">
-          <li>
-            <span class="id">10</span>
-            <strong>Hay que estar identificado para reservar</strong>
-            Se puede explorar sin cuenta. Al tocar Reservar, se pide registro o
-            inicio de sesión.
-          </li>
-          <li>
-            <span class="id">11</span>
-            <strong>Las fechas se bloquean unos minutos durante el pago</strong>
-            Si el pago no entra, el calendario se libera.
-          </li>
-          <li>
-            <span class="id">12</span>
-            <strong>El cliente paga todo al reservar, en dólares</strong>
-            Sin anticipos a medias en Fase 1. El dinero no se mueve al hoster
-            hasta cumplir las reglas 18 a 23.
-          </li>
-          <li>
-            <span class="id">13</span>
-            <strong>Tres políticas de cancelación</strong>
-            Flexible (48 h), moderada (7 días) o estricta (14 días). Admin
-            define las plantillas; el hoster elige una por experiencia.
-          </li>
-          <li>
-            <span class="id">14</span>
-            <strong>La reseña abre 24 horas después del check-out y cierra a los 30 días</strong>
-            Solo si la reserva está completada o ya pagada al hoster.
-          </li>
-        </ul>
-
-        <h4>Cumplimiento y pago al hoster</h4>
-        <ul class="rule-list">
-          <li>
-            <span class="id">18</span>
-            <strong>Cada reserva genera una lista de cumplimiento</strong>
-            La estancia más cada servicio contratado. Empiezan como pendientes.
-          </li>
-          <li>
-            <span class="id">19</span>
-            <strong>Solo quien presta el servicio lo marca como hecho</strong>
-            El hoster marca la casa y lo suyo. El provider, lo suyo. Nadie
-            marca el trabajo de otro.
-          </li>
-          <li>
-            <span class="id">20</span>
-            <strong>Completada = todo marcado como hecho</strong>
-            Si falta el traslado, la reserva no se cierra.
-          </li>
-          <li>
-            <span class="id">21</span>
-            <strong>Admin paga al hoster a mano, y solo si está completada, todo hecho y sin disputa</strong>
-            El monto es el total menos la comisión. Después queda como pagada
-            al hoster.
-          </li>
-          <li>
-            <span class="id">22</span>
-            <strong>En Fase 1 no se parte el pago entre providers</strong>
-            El hoster recibe el neto. Los terceros cobran por acuerdo externo.
-            Su marca de “hecho” es evidencia, no un cobro automático.
-          </li>
-          <li>
-            <span class="id">23</span>
-            <strong>Una disputa congela el pago</strong>
-            Cliente o admin pueden abrirla. Se resuelve antes de transferir.
-          </li>
-        </ul>
-
-        <h4>Operación</h4>
-        <ul class="rule-list">
-          <li>
-            <span class="id">15</span>
-            <strong>Admin puede suspender una cuenta, una casa o una experiencia</strong>
-            Deja de verse en el sitio. Las reservas ya pagadas se tratan caso
-            por caso.
-          </li>
-          <li>
-            <span class="id">16</span>
-            <strong>Unir un servicio de provider a un hoster requiere aprobación</strong>
-            El hoster lo pide; admin lo acepta. Un marketplace interno más
-            automático llega en Fase 3.
-          </li>
-          <li>
-            <span class="id">17</span>
-            <strong>La comisión es un porcentaje global, 15% de entrada</strong>
-            Se descuenta al pagar al hoster, no al cobro del viajero (el
-            viajero ya pagó el total).
-          </li>
-        </ul>
-      </section>
-
-      <section id="fase1">
-        <h2>6. Fase 1 — Lanzamiento</h2>
+        <h2>6. Reglas del negocio</h2>
         <p class="lead">
-          Objetivo: salir al mercado con reservas reales, dinero real y un
-          estándar de lujo controlado por operaciones. Sin apps nativas todavía.
+          Si no está aquí, no se asume. Son el contrato operativo del
+          lanzamiento.
         </p>
 
-        <h3>Lo que se entrega</h3>
-        <div class="card-grid">
-          <div class="card">
-            <div class="tag f1">Sitio del cliente</div>
-            <h3>Reservar como en un producto premium</h3>
-            <p>
-              Búsqueda por destino y fechas, mapa, ficha con fotos, servicios
-              que se quitan o se dejan, pago en dólares, mis reservas y reseñas.
-              Funciona bien en el teléfono, aunque todavía no es una app de
-              tienda.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f1">Portal de operaciones</div>
-            <h3>Un solo back-office</h3>
-            <p>
-              Admin, hoster y provider entran al mismo sitio. Cada uno tiene su
-              menú. De ahí se aprueban cuentas, se publican experiencias, se
-              marcan servicios y se libera el pago al hoster.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f1">Altas</div>
-            <h3>Hoster y provider se postulan</h3>
-            <p>
-              Completan perfil y, en el caso del provider, sus servicios. Nada
-              es público hasta que operaciones lo aprueba. Así se crece el
-              catálogo sin abrir la puerta a cualquiera.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f1">Confianza</div>
-            <h3>Reviews y reputación</h3>
-            <p>
-              Calificación visible, comentarios y control de operaciones sobre
-              reseñas abusivas. La reputación es parte del lanzamiento, no un
-              extra posterior.
-            </p>
-          </div>
-        </div>
-
-        <h3>Qué puede hacer cada rol en Fase 1</h3>
+        <h3>Cuentas y catálogo</h3>
         <table>
           <thead>
             <tr>
-              <th>Rol</th>
-              <th>Puede</th>
+              <th>#</th>
+              <th>Regla</th>
+              <th>En corto</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="role-tag admin">Admin</span></td>
-              <td>
-                Aprobar o rechazar hosters, providers, casas y experiencias.
-                Ver la lista de cumplimiento de cada reserva. Liberar el pago
-                al hoster. Abrir o cerrar una disputa. Ocultar una reseña.
-                Configurar comisión y políticas de cancelación.
-              </td>
+              <td>01</td>
+              <td><strong>Una cuenta, un rol</strong></td>
+              <td>El mismo email no es hoster y cliente a la vez.</td>
             </tr>
             <tr>
-              <td><span class="role-tag hoster">Hoster</span></td>
-              <td>
-                Pedir alta, cargar la casa, armar la experiencia, pedir
-                servicios de un provider, ver reservas, hacer check-in, marcar
-                lo suyo como hecho y cerrar la estancia cuando no falte nada.
-              </td>
+              <td>02</td>
+              <td><strong>Hoster y provider entran con aprobación</strong></td>
+              <td>Admin crea o aprueba. Cada servicio queda en revisión.</td>
             </tr>
             <tr>
-              <td><span class="role-tag provider">Provider</span></td>
-              <td>
-                Pedir alta, cargar sus servicios y disponibilidad, ver en qué
-                reservas participa y marcar su servicio como realizado.
-              </td>
+              <td>03</td>
+              <td><strong>Sin casa aprobada no hay experiencia</strong></td>
+              <td>Cuenta → casa → admin OK → recién se puede publicar.</td>
             </tr>
             <tr>
-              <td><span class="role-tag customer">Cliente</span></td>
+              <td>04</td>
+              <td><strong>Una experiencia = una casa</strong></td>
+              <td>No hay paquetes de varias villas.</td>
+            </tr>
+            <tr>
+              <td>05</td>
+              <td><strong>Solo el dueño publica sobre su casa</strong></td>
+              <td>Nadie usa la propiedad de otro.</td>
+            </tr>
+            <tr>
+              <td>06</td>
+              <td><strong>Los servicios no se venden sueltos</strong></td>
+              <td>El viajero ve el paquete, no un catálogo de vendors.</td>
+            </tr>
+            <tr>
+              <td>07</td>
+              <td><strong>Lo obligatorio no se quita</strong></td>
+              <td>Lo opcional sí, y el precio se recalcula.</td>
+            </tr>
+            <tr>
+              <td>08</td>
+              <td><strong>Admin publica la ficha final</strong></td>
+              <td>Cura fotos, texto y precio. El hoster propone.</td>
+            </tr>
+            <tr>
+              <td>09</td>
+              <td><strong>Mínimo para pedir publicación</strong></td>
               <td>
-                Explorar, filtrar, ver el mapa, personalizar, pagar, cancelar
-                según política, escribir reseña y reportar un problema.
+                5 fotos, descripción, mapa, precio, calendario y un servicio.
               </td>
             </tr>
           </tbody>
         </table>
 
-        <h3>Recorridos que tienen que funcionar el día del lanzamiento</h3>
-        <div class="flow-steps">
-          <span class="flow-step">Hoster se registra</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Admin aprueba</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Carga la casa</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Admin aprueba la casa</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Publica la experiencia</span>
-        </div>
-        <div class="flow-steps">
-          <span class="flow-step">Provider se registra</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Admin aprueba</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Hoster pide su servicio</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Queda dentro de una experiencia</span>
-        </div>
-        <div class="flow-steps">
-          <span class="flow-step">Cliente explora</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Quita un servicio opcional</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Paga</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Viaja</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Se marca todo como hecho</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Admin paga al hoster</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Cliente deja reseña</span>
-        </div>
-
-        <h3>Queda fuera de Fase 1</h3>
-        <p>No entra en el precio ni en el plazo de esta primera entrega:</p>
-        <ul class="rule-list">
-          <li><strong>App de tienda (iPhone / Android)</strong> Eso es Fase 2 para el viajero y Fase 3 para hoster/provider.</li>
-          <li><strong>Chat en vivo</strong> En Fase 1 la conversación es por email o aviso básico.</li>
-          <li><strong>Reparto automático a cada provider</strong> El hoster les paga por fuera.</li>
-          <li><strong>Pago al hoster sin revisión humana</strong> Operaciones siempre confirma.</li>
-          <li><strong>Precios por temporada y otras monedas</strong> Solo dólares y precio base.</li>
-          <li><strong>Programas de puntos, referidos o marca blanca</strong></li>
-        </ul>
-      </section>
-
-      <section id="fase2">
-        <h2 class="f2">7. Fase 2 — App del cliente y crecimiento</h2>
-        <p class="lead">
-          Cuando el modelo ya vende en la web, llevamos la reserva al teléfono
-          del viajero y suavizamos la operación del día a día.
-        </p>
-
-        <div class="card-grid">
-          <div class="card">
-            <div class="tag f2">Prioridad</div>
-            <h3>App nativa del cliente</h3>
-            <p>
-              Explorar, ver el mapa, personalizar, pagar, consultar reservas y
-              recibir avisos. La misma lógica de la web, con la fluidez de una
-              app de lujo. iPhone y Android.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f2">Relación</div>
-            <h3>Chat y avisos en el teléfono</h3>
-            <p>
-              Conversación hoster–cliente una vez hay reserva confirmada.
-              Recordatorios de check-in, cambios y mensajes. El email sigue
-              como respaldo.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f2">Negocio</div>
-            <h3>Más monedas y temporada</h3>
-            <p>
-              El viajero puede ver precios en otras monedas. El hoster define
-              alta y baja temporada, festivos y mínimo de noches.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f2">Cuenta</div>
-            <h3>Entrar con Apple o Google, y lista de deseos</h3>
-            <p>
-              Menos fricción para reservar. Guardar experiencias para más
-              adelante. Una misma persona podrá ser hoster y viajero con la
-              misma cuenta.
-            </p>
-          </div>
-        </div>
-
-        <h3>Inteligencia artificial en Fase 2 — ayuda, no piloto automático</h3>
-        <p>
-          La IA acelera a operaciones y mejora cómo el viajero encuentra. No
-          publica sola ni aprueba una villa de lujo sin una persona.
-        </p>
-        <div class="card-grid">
-          <div class="card">
-            <div class="tag f2">Operaciones</div>
-            <h3>Revisión asistida</h3>
-            <p>
-              Señala fotos flojas, textos raros o incoherencias (“casa para 20
-              con dos habitaciones”) para que admin revise más rápido.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f2">Cliente</div>
-            <h3>Búsqueda en lenguaje natural</h3>
-            <p>
-              “Villa con yate en Riviera Maya para 8 en diciembre” se convierte
-              en resultados que tienen sentido, no solo en filtros rígidos.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f2">Confianza</div>
-            <h3>Lectura de reseñas</h3>
-            <p>
-              Detecta tono negativo o menciones graves (seguridad, fraude) y
-              avisa a operaciones.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f2">Alcance</div>
-            <h3>Traducción de fichas</h3>
-            <p>
-              El hoster escribe en un idioma; el viajero puede leer en el suyo
-              (español e inglés de entrada).
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="fase3">
-        <h2 class="f3">8. Fase 3 — App de hoster/provider y escala</h2>
-        <p class="lead">
-          Cuando ya hay volumen, le damos herramientas de campo a quien opera
-          la experiencia y automatizamos el dinero entre las partes.
-        </p>
-
-        <div class="card-grid">
-          <div class="card">
-            <div class="tag f3">Prioridad</div>
-            <h3>App del hoster y del provider</h3>
-            <p>
-              Calendario, reservas nuevas, check-in, fotos en el lugar, marcar
-              servicios hechos y actualizar disponibilidad del yate o del chef
-              sin sentarse en un escritorio.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f3">Dinero</div>
-            <h3>Pago partido en automático</h3>
-            <p>
-              La plataforma se queda su comisión, le paga al hoster y le paga
-              a cada provider según los servicios de esa reserva. Con
-              historial auditable.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f3">Red</div>
-            <h3>Mercado interno hoster ↔ provider</h3>
-            <p>
-              El hoster descubre y contrata servicios aprobados. Tarifas,
-              disponibilidad compartida y menos ida y vuelta por WhatsApp.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f3">Producto</div>
-            <h3>Varios días, puntos y marca blanca</h3>
-            <p>
-              Itinerarios día por día, programa de lealtad, referidos,
-              analítica comercial y la opción de que un partner opere con su
-              propia marca sobre la misma plataforma.
-            </p>
-          </div>
-        </div>
-
-        <h3>Inteligencia artificial en Fase 3 — copiloto</h3>
-        <div class="card-grid">
-          <div class="card">
-            <div class="tag f3">Hoster</div>
-            <h3>Asistente para crear experiencias</h3>
-            <p>
-              El hoster describe la villa en una frase. El sistema propone
-              estructura, servicios, un precio de partida y un texto a la
-              altura. Él edita y manda a revisión.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f3">Hoster</div>
-            <h3>Sugerencia de precio</h3>
-            <p>
-              Compara zona, temporada, ocupación y paquetes parecidos. El
-              hoster acepta o ajusta.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f3">Cliente</div>
-            <h3>Concierge en el chat</h3>
-            <p>
-              Responde antes de reservar, ayuda a armar el paquete y escala a
-              una persona si el viajero es VIP o la duda es compleja.
-            </p>
-          </div>
-          <div class="card">
-            <div class="tag f3">Cliente</div>
-            <h3>Itinerario después de pagar</h3>
-            <p>
-              Horario de llegada, cuándo aparece el chef, contacto del
-              capitán, mapa. Se actualiza si se quitó un servicio.
-            </p>
-          </div>
-        </div>
-
-        <h3>Cómo crece la IA de una fase a la otra</h3>
+        <h3>Reserva, pago y reputación</h3>
         <table>
           <thead>
             <tr>
-              <th>Capacidad</th>
-              <th>Fase 2</th>
-              <th>Fase 3</th>
+              <th>#</th>
+              <th>Regla</th>
+              <th>En corto</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Revisión de fotos y textos</td>
-              <td>Marca alertas para admin</td>
-              <td>Puede aprobar sola los casos de bajo riesgo</td>
+              <td>10</td>
+              <td><strong>Hay que estar identificado para reservar</strong></td>
+              <td>Se explora sin cuenta. Al reservar, login.</td>
             </tr>
             <tr>
-              <td>Búsqueda</td>
-              <td>El viajero escribe como habla</td>
-              <td>Concierge que conversa y recomienda</td>
+              <td>11</td>
+              <td><strong>Las fechas se bloquean unos minutos</strong></td>
+              <td>Si el pago no entra, el calendario se libera.</td>
             </tr>
             <tr>
-              <td>Crear experiencias</td>
-              <td>—</td>
-              <td>Asistente completo para el hoster</td>
+              <td>12</td>
+              <td><strong>100% al reservar, en USD</strong></td>
+              <td>
+                Un solo pago en checkout. Sin anticipo parcial, sin pagos
+                diferidos, sin cuotas, sin pagar al llegar.
+              </td>
             </tr>
             <tr>
-              <td>Precios</td>
-              <td>Temporada definida a mano</td>
-              <td>Sugerencias según demanda</td>
+              <td>13</td>
+              <td><strong>Tres políticas de cancelación</strong></td>
+              <td>Flexible 48 h · Moderada 7 días · Estricta 14 días.</td>
             </tr>
             <tr>
-              <td>Reseñas</td>
-              <td>Detecta el tono</td>
-              <td>Propone respuesta al hoster</td>
+              <td>14</td>
+              <td>
+                <strong>La reseña abre 24 h después del check-out</strong>
+              </td>
+              <td>Cierra a los 30 días. Una por reserva.</td>
             </tr>
           </tbody>
         </table>
 
-        <div class="alert info">
-          <strong>Orden recomendado:</strong> no abrir Fase 3 hasta que Fase 2
-          tenga tracción (reservas que se repiten, reseñas buenas, varios
-          hosters activos). La app de campo y el pago partido valen la pena
-          cuando el volumen ya duele hacerlo a mano.
-        </div>
+        <h3>Operación, comisión y mensajes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Regla</th>
+              <th>En corto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15</td>
+              <td><strong>Admin puede suspender</strong></td>
+              <td>
+                Cuentas, casas o experiencias. Reservas pagadas, caso por caso.
+              </td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td><strong>Unir un servicio al hoster pide OK</strong></td>
+              <td>El hoster lo pide; admin acepta.</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td><strong>Comisión global 15%</strong></td>
+              <td>Se descuenta al pagar al hoster, no al cobro del viajero.</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>
+                <strong>Cada reserva tiene una lista de cumplimiento</strong>
+              </td>
+              <td>Casa + cada servicio contratado. Empiezan pendientes.</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td><strong>Solo quien presta marca “hecho”</strong></td>
+              <td>Hoster lo suyo. Provider lo suyo.</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td><strong>Completada = todo hecho</strong></td>
+              <td>Si falta el traslado, no se cierra.</td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td><strong>Admin paga a mano</strong></td>
+              <td>Solo si está completada, todo hecho y sin disputa.</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td><strong>No se parte el pago a providers</strong></td>
+              <td>El hoster recibe el neto. Los terceros cobran por fuera.</td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td><strong>Una disputa congela el pago</strong></td>
+              <td>La abre el cliente o admin.</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td><strong>Mensajes solo con reserva confirmada</strong></td>
+              <td>Un hilo por reserva, cliente ↔ hoster.</td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td><strong>Mensajería sencilla</strong></td>
+              <td>
+                Texto e historial. Sin adjuntos. Aviso por email si no hay nadie
+                en línea.
+              </td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td><strong>Admin puede leer el hilo</strong></td>
+              <td>Para moderación y disputas.</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <section id="inversion">
-        <h2>9. Inversión — Fase 1</h2>
+        <h2>7. Inversión</h2>
         <p class="lead">
-          Cotización de <strong>Samari Studio</strong> para entregar la Fase 1
-          descrita arriba: sitio del cliente, portal de operaciones (admin,
-          hoster y provider) y todo el flujo de reserva, reseña y pago al
-          hoster.
+          Propuesta de <strong>Samari Studio</strong> para el lanzamiento: sitio
+          del cliente, portal de operaciones, pagos, mensajes, reseñas y el
+          flujo completo de reserva a payout.
         </p>
 
         <div class="price-hero">
           <div class="price-row">
             <div class="price-label">Producto</div>
-            <div class="price-value">Plataforma de Experiencias de Lujo</div>
+            <div class="price-value">Experiencias de Lujo</div>
+            <div class="price-sub">Marketplace web, listo para cobrar</div>
           </div>
           <div class="price-row">
-            <div class="price-label">Alcance contratado</div>
-            <div class="price-value">Fase 1</div>
-            <div class="price-sub">Web cliente + portal unificado + pagos + reviews</div>
+            <div class="price-label">Plazo</div>
+            <div class="price-value">4–5 meses</div>
+            <div class="price-sub">Desde el arranque hasta el go-live</div>
           </div>
           <div class="price-row">
-            <div class="price-label">Plazo · Inversión</div>
-            <div class="price-value">6 meses · <strong>$82,500 USD</strong></div>
-            <div class="price-sub">30% de enganche + 5 mensualidades</div>
-          </div>
-          <div class="price-row">
-            <div class="price-label">Fecha</div>
-            <div class="price-value">Septiembre 2026</div>
+            <div class="price-label">Inversión</div>
+            <div class="price-value"><strong>$35,000 USD</strong></div>
+            <div class="price-sub">30% al firmar + mensualidades</div>
           </div>
         </div>
 
-        <h3>Cómo se construye el número</h3>
-        <ul class="rule-list">
-          <li>
-            <span class="id">Mercado</span>
-            <strong>$100,000 – $120,000 USD</strong>
-            Es el rango habitual para un producto de este tipo: dos
-            aplicaciones web, mapa, pagos, aprobaciones, reputación y un
-            flujo de dinero en dos tiempos. Un precio demasiado bajo también
-            dice algo sobre la calidad que se puede sostener.
-          </li>
-          <li>
-            <span class="id">Propuesta</span>
-            <strong>$82,500 USD en 6 meses</strong>
-            Ajustado hacia el rango de mercado para cubrir el nivel de
-            acompañamiento y calidad que este lanzamiento requiere. El
-            trabajo concentrado de desarrollo se reparte en un calendario
-            de 6 meses: espacio real para feedback, ajustes y un piloto con
-            hosters reales.
-          </li>
-        </ul>
+        <h3>Cómo se paga</h3>
+        <div class="pay-visual">
+          <div class="pay-row">
+            <div class="lbl"><span>Al firmar · 30%</span><b>$10,500</b></div>
+            <div class="bar"><i style="width: 30%"></i></div>
+          </div>
+          <div class="pay-row">
+            <div class="lbl">
+              <span>Mensualidades · 70%</span><b>$24,500</b>
+            </div>
+            <div class="bar"><i style="width: 70%"></i></div>
+          </div>
+        </div>
+        <p class="caption">
+          En 4 meses ≈ $6,125/mes. En 5 meses ≈ $4,900/mes. Se acuerda el
+          calendario al firmar.
+        </p>
 
-        <h3>Plan de pagos</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Momento</th>
-              <th>%</th>
-              <th>Monto</th>
-              <th>Detalle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Arranque</td>
-              <td>30%</td>
-              <td>$24,750</td>
-              <td>Al firmar, antes de iniciar el desarrollo</td>
-            </tr>
-            <tr>
-              <td>Mensualidades</td>
-              <td>70%</td>
-              <td>$57,750</td>
-              <td>
-                5 cuotas mensuales iguales de $11,550, en los 5 meses
-                siguientes al enganche, hasta liquidar
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="price-callout">
-          Fase 1 queda cerrada en <strong>$82,500 USD</strong>. Fases 2 y 3
-          (app del cliente, app de hoster/provider, IA avanzada y pago
-          automático a terceros) se cotizan aparte cuando el lanzamiento ya
-          tenga tracción. Cualquier pedido fuera de esta Fase 1 también se
-          cotiza aparte.
+        <h3>Qué cubre este monto</h3>
+        <div class="include-grid">
+          <div class="inc">
+            <strong>Sitio del cliente</strong>
+            <p>Explorar, personalizar, reservar, pagar, mensajes y reseñas.</p>
+          </div>
+          <div class="inc">
+            <strong>Portal de operaciones</strong>
+            <p>Admin, hoster y provider en un panel, cada uno con su menú.</p>
+          </div>
+          <div class="inc">
+            <strong>Pagos y payout</strong>
+            <p>
+              100% al reservar en checkout. Checklist de cumplimiento y
+              liberación al hoster.
+            </p>
+          </div>
+          <div class="inc">
+            <strong>Calidad</strong>
+            <p>Aprobaciones, curación de fotos, disputas y métricas básicas.</p>
+          </div>
         </div>
 
-        <div class="alert success">
-          <strong>Siguiente paso:</strong> validar este alcance, ponerle nombre
-          al producto, cerrar 1 o 2 hosters piloto y arrancar el diseño de las
-          pantallas que el viajero y operaciones van a tocar todos los días.
-        </div>
+        <p class="note">
+          Evoluciones posteriores — app móvil, mapa interactivo, split de pagos
+          a providers, IA avanzada — se cotizan por separado cuando el
+          lanzamiento ya esté operando y generando reservas.
+        </p>
       </section>
     </main>
 
     <footer>
       <p>Plataforma de Experiencias de Lujo — Propuesta de producto</p>
-      <p>Fase 1 contratada · Fases 2 y 3 descritas · Septiembre 2026</p>
+      <p>MVP · Lanzamiento · Septiembre 2026</p>
       <p class="brand-credit">
-        <img class="brand-logo-icon" src="data:image/webp;base64,UklGRogFAABXRUJQVlA4WAoAAAAwAAAAzAAALgAASUNDUDACAAAAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAHzwAGAAMAAAAAAABhY3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApjcHJ0AAAA/AAAADJkZXNjAAABMAAAAGt3dHB0AAABnAAAABRia3B0AAABsAAAABRyVFJDAAABxAAAAA5nVFJDAAAB1AAAAA5iVFJDAAAB5AAAAA5yWFlaAAAB9AAAABRnWFlaAAACCAAAABRiWFlaAAACHAAAABR0ZXh0AAAAAENvcHlyaWdodCAxOTk5IEFkb2JlIFN5c3RlbXMgSW5jb3Jwb3JhdGVkAAAAZGVzYwAAAAAAAAARQWRvYmUgUkdCICgxOTk4KQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAAAAAAAAAAAAAAAGN1cnYAAAAAAAAAAQIzAABjdXJ2AAAAAAAAAAECMwAAY3VydgAAAAAAAAABAjMAAFhZWiAAAAAAAACcGAAAT6UAAAT8WFlaIAAAAAAAADSNAACgLAAAD5VYWVogAAAAAAAAJjEAABAvAAC+nFZQOEwyAwAAL8yACxCHIBZM5i/dmcL8z79AIIUbXKIGgyFLtt24jQBO4oy3/+22IwIQ+z+i/xNAjnOm/3MLdN9QN6qLkP7mawCzXCYPAGbx6VPwfs+aPpFSOgGkhWuEuvHTJHeB9iiucpv49wzAyFdIHX/rcRWYSmWFhPe/Qhf8qQLsGj7Gz8ZbtUdgLsVD6HirBGDkD6WOQyWecDnZLAtcALuGT3DZONbhBac7GhUcWgAY2V3sAkUVXnArbFLgCtg1OOKyoKtS4XhZRPEGYCQnoQu0NQIU9/x3a+AxWPgAsB+2KxOGGu1EWqK/U5MjYT1FHwB6MglNYLmSwjroTO+5nqDcB9gPa5UJS2mBNPF+0nmUg/URfrYFgJ4UQhVYjky66aAqUH43p4c1f74jotTFAtgPv8sDlvsJpH2yNeipteaUEtOpziiB9LksCwA9/RHqhqH0RIYnGEFBX6MyWccuFsAuTJQGLFdhMo0nwGolfUQieeSyLADpPKG/WyBzOfopc9ZaUmJPEslraGIAJL2RyePQeT1nrzl4KOS5THf7YfKZzH7vFq02OQ9tO5Ieye/wAWBGm+qNiPJwMguTZ15egGKSPkAU6nYwAjkPyw3KbYgodzNgFnZF3NwgGdDFAOnRE1HoXvZlQt041wGwCjsi4tK3B5SblAlVNUB6cvQvp1LbnGIyrhG7QNkAwH7Y00tO6aljquAO/Czop24BoOcP/B1yk6N4gTxgOQOFJhbArsEopfTU2uY4IyLuJ+lroW0YSg/0s0wLACMrlbnxOmkQrYtwmbBchellaGIB7BY0Mg6XTr9G7AJD6ZGOy7QAMMsZyQG6yj6gr/CzYbkLk2poYgFIPuonmOGs4/36SB4w7YkMy7RAPQpHQM+vwrNxWD8Cy/0wGYcmfqidAViz11rrnILzcJuRyCOX5Ya3hmWlq+wayG3s4oOieFp0k5HJN5flgqL4WXwPqYE+GLs4oLi9LKZbzEJf5bLsiLuPSqefkRbo07GLFVGadj3QHWah73NZVkShbYtdAyl+QXqkS8YuRkQUn7E1Vn8C6Yb63sMqTBflsqx+pvTUlyVFuiOAHum6qTu49H6Y/AI=" alt="Samari Studio" />
+        <img
+          class="brand-logo-icon"
+          src="data:image/webp;base64,UklGRogFAABXRUJQVlA4WAoAAAAwAAAAzAAALgAASUNDUDACAAAAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAHzwAGAAMAAAAAAABhY3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApjcHJ0AAAA/AAAADJkZXNjAAABMAAAAGt3dHB0AAABnAAAABRia3B0AAABsAAAABRyVFJDAAABxAAAAA5nVFJDAAAB1AAAAA5iVFJDAAAB5AAAAA5yWFlaAAAB9AAAABRnWFlaAAACCAAAABRiWFlaAAACHAAAABR0ZXh0AAAAAENvcHlyaWdodCAxOTk5IEFkb2JlIFN5c3RlbXMgSW5jb3Jwb3JhdGVkAAAAZGVzYwAAAAAAAAARQWRvYmUgUkdCICgxOTk4KQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAAAAAAAAAAAAAAAGN1cnYAAAAAAAAAAQIzAABjdXJ2AAAAAAAAAAECMwAAY3VydgAAAAAAAAABAjMAAFhZWiAAAAAAAACcGAAAT6UAAAT8WFlaIAAAAAAAADSNAACgLAAAD5VYWVogAAAAAAAAJjEAABAvAAC+nFZQOEwyAwAAL8yACxCHIBZM5i/dmcL8z79AIIUbXKIGgyFLtt24jQBO4oy3/+22IwIQ+z+i/xNAjnOm/3MLdN9QN6qLkP7mawCzXCYPAGbx6VPwfs+aPpFSOgGkhWuEuvHTJHeB9iiucpv49wzAyFdIHX/rcRWYSmWFhPe/Qhf8qQLsGj7Gz8ZbtUdgLsVD6HirBGDkD6WOQyWecDnZLAtcALuGT3DZONbhBac7GhUcWgAY2V3sAkUVXnArbFLgCtg1OOKyoKtS4XhZRPEGYCQnoQu0NQIU9/x3a+AxWPgAsB+2KxOGGu1EWqK/U5MjYT1FHwB6MglNYLmSwjroTO+5nqDcB9gPa5UJS2mBNPF+0nmUg/URfrYFgJ4UQhVYjky66aAqUH43p4c1f74jotTFAtgPv8sDlvsJpH2yNeipteaUEtOpziiB9LksCwA9/RHqhqH0RIYnGEFBX6MyWccuFsAuTJQGLFdhMo0nwGolfUQieeSyLADpPKG/WyBzOfopc9ZaUmJPEslraGIAJL2RyePQeT1nrzl4KOS5THf7YfKZzH7vFq02OQ9tO5Ieye/wAWBGm+qNiPJwMguTZ15egGKSPkAU6nYwAjkPyw3KbYgodzNgFnZF3NwgGdDFAOnRE1HoXvZlQt041wGwCjsi4tK3B5SblAlVNUB6cvQvp1LbnGIyrhG7QNkAwH7Y00tO6aljquAO/Czop24BoOcP/B1yk6N4gTxgOQOFJhbArsEopfTU2uY4IyLuJ+lroW0YSg/0s0wLACMrlbnxOmkQrYtwmbBchellaGIB7BY0Mg6XTr9G7AJD6ZGOy7QAMMsZyQG6yj6gr/CzYbkLk2poYgFIPuonmOGs4/36SB4w7YkMy7RAPQpHQM+vwrNxWD8Cy/0wGYcmfqidAViz11rrnILzcJuRyCOX5Ya3hmWlq+wayG3s4oOieFp0k5HJN5flgqL4WXwPqYE+GLs4oLi9LKZbzEJf5bLsiLuPSqefkRbo07GLFVGadj3QHWah73NZVkShbYtdAyl+QXqkS8YuRkQUn7E1Vn8C6Yb63sMqTBflsqx+pvTUlyVFuiOAHum6qTu49H6Y/AI="
+          alt="Samari Studio"
+        />
         Propuesta Plataforma de Experiencias de Lujo
       </p>
     </footer>
