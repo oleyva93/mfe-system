@@ -863,6 +863,7 @@
         <li><a href="#operacion">Cómo opera</a></li>
         <li><a href="#reglas">Reglas</a></li>
         <li><a href="#inversion">Inversión</a></li>
+        <li><a href="#gastos">Gastos AWS</a></li>
       </ul>
     </nav>
 
@@ -1794,6 +1795,222 @@
           Evoluciones posteriores — app móvil, mapa interactivo, split de pagos
           a providers, IA avanzada — se cotizan por separado cuando el
           lanzamiento ya esté operando y generando reservas.
+        </p>
+      </section>
+
+      <section id="gastos">
+        <h2>8. Gastos operativos de infraestructura</h2>
+        <p class="lead">
+          Además de la inversión de desarrollo, la plataforma corre sobre
+          <strong>AWS serverless</strong> y <strong>Clerk (plan Free)</strong>
+          para autenticación. Son costos variables, bajos al inicio, que escalan
+          con uso real — no hay servidores fijos que pagar mes a mes.
+        </p>
+
+        <div class="takeaway">
+          <span class="k">Quién paga</span>
+          <span
+            >Durante la <strong>Fase 1</strong> (desarrollo, QA y piloto hasta
+            el go-live), los gastos operativos de AWS y Clerk los absorbe
+            <strong>Samari Studio</strong>. Una vez la plataforma esté en
+            <strong>producción estable</strong>, esas cuentas se transfieren al
+            cliente: él pasa a ser titular de la facturación y del presupuesto
+            mensual de infraestructura.</span
+          >
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi">
+            <span class="num">$0–25</span>
+            <span class="lbl">Desarrollo · USD/mes</span>
+          </div>
+          <div class="kpi">
+            <span class="num">$40–90</span>
+            <span class="lbl">Producción Fase 1 · USD/mes</span>
+          </div>
+          <div class="kpi">
+            <span class="num">~1,000</span>
+            <span class="lbl">Usuarios de referencia</span>
+          </div>
+          <div class="kpi">
+            <span class="num">$0</span>
+            <span class="lbl">Clerk Free · hasta 10k MAU</span>
+          </div>
+        </div>
+
+        <p class="caption">
+          Estimaciones orientativas (marzo 2026). No incluyen comisiones de
+          Stripe ni dominio/email. Con tráfico muy bajo en dev, varios servicios
+          quedan dentro del free tier de AWS.
+        </p>
+
+        <h3>Para qué sirve cada pieza</h3>
+        <div class="include-grid">
+          <div class="inc">
+            <strong>AWS Lambda</strong>
+            <p>
+              Motor del backend: reservas, aprobaciones, checklist de
+              cumplimiento, webhooks de pago, notificaciones y endpoints del
+              portal. Solo corre cuando alguien usa la app — no hay servidor
+              encendido 24/7.
+            </p>
+          </div>
+          <div class="inc">
+            <strong>Amazon API Gateway</strong>
+            <p>
+              Puerta HTTPS pública de la API: recibe peticiones del sitio
+              (explorar, reservar, mensajes, panel admin/hoster/provider) y las
+              enruta a la Lambda correcta. Centraliza CORS, throttling y rutas.
+            </p>
+          </div>
+          <div class="inc">
+            <strong>Amazon DynamoDB</strong>
+            <p>
+              Base de datos principal: experiencias, propiedades, reservas,
+              pagos/payouts, mensajes, reseñas, roles y bitácora operativa.
+              Escala automáticamente; se paga por lectura/escritura real.
+            </p>
+          </div>
+          <div class="inc">
+            <strong>Amazon S3</strong>
+            <p>
+              Archivos estáticos: fotos curadas de experiencias (hoster sube,
+              admin aprueba), logos, assets del sitio y respaldos. En Fase 1 los
+              mensajes son solo texto — S3 se usa sobre todo para imágenes de
+              catálogo.
+            </p>
+          </div>
+          <div class="inc">
+            <strong>Clerk · plan Free</strong>
+            <p>
+              Usuarios y sesiones: registro, login, roles (cliente, hoster,
+              provider, admin) y JWT que el backend valida. Free hasta
+              10,000 MAU — cubre el piloto y ~1,000 usuarios en Fase 1.
+            </p>
+          </div>
+        </div>
+
+        <h3>Estimación mensual por entorno</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Desarrollo</th>
+              <th>Producción (~1,000 usuarios)</th>
+              <th>Notas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lambda</strong></td>
+              <td>$0–5</td>
+              <td>$8–25</td>
+              <td>
+                Pocas invocaciones en dev. En prod: reservas, mensajes, panel
+                operativo. Free tier cubre ~1M req/mes el primer año.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>API Gateway</strong></td>
+              <td>$0–3</td>
+              <td>$5–15</td>
+              <td>
+                HTTP API (~$1 por millón de requests). Con ~1k usuarios y uso
+                moderado, volumen bajo; sube si hay mucho tráfico de panel.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>DynamoDB</strong></td>
+              <td>$0–5</td>
+              <td>$10–30</td>
+              <td>
+                On-demand. Tablas de experiencias, reservas, mensajes y reviews.
+                Free tier: 25 GB almacenamiento + lecturas/escrituras incluidas.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S3</strong></td>
+              <td>$0–2</td>
+              <td>$5–15</td>
+              <td>
+                ~1–5 GB de fotos curadas + backups. Storage barato; el costo sube
+                si hay muchas imágenes HD o transferencia saliente alta.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Clerk</strong></td>
+              <td class="yes">$0</td>
+              <td class="yes">$0</td>
+              <td>
+                Plan Free: 10k MAU, auth social básica, roles. Upgrade solo si
+                superan MAU o necesitan SSO enterprise.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Logs / monitoreo</strong></td>
+              <td>$0–3</td>
+              <td>$5–10</td>
+              <td>CloudWatch para errores y trazas. Mantenemos retención corta
+                en Fase 1.</td>
+            </tr>
+            <tr>
+              <td><strong>Total aprox.</strong></td>
+              <td><strong>$0–25</strong></td>
+              <td><strong>$40–90</strong></td>
+              <td>
+                Rango prudente para Fase 1. Por debajo de $50/mes es habitual
+                con tráfico de piloto; el techo asume uso activo del panel y
+                catálogo con muchas fotos.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="takeaway">
+          <span class="k">Opex</span>
+          <span
+            >El opex de infraestructura es marginal frente al CAPEX de
+            desarrollo: arquitectura <strong>serverless pay-per-use</strong> (sin
+            instancias reservadas ni SRE dedicado). En dev, el consumo cae
+            dentro del free tier de AWS; en prod Fase 1 (~1,000 usuarios,
+            ~300–500 MAU), el stack Lambda + API Gateway + DynamoDB + S3 + Clerk
+            Free se estima en <strong>$40–90 USD/mes</strong> — órdenes de
+            magnitud por debajo de un clúster EC2/ECS 24/7, bases gestionadas
+            sobredimensionadas o un contrato de operaciones cloud.</span
+          >
+        </div>
+
+        <div class="money-story">
+          <div class="money-card">
+            <h4>Desarrollo (equipo + QA)</h4>
+            <p>
+              Entorno separado, datos de prueba, deploys frecuentes. Tráfico
+              mínimo: 2–5 personas probando reservas, fotos y flujos de admin.
+            </p>
+            <p class="caption" style="margin-top: 0.75rem">
+              <strong>~$0–25 USD/mes</strong> · muchas veces $0 con free tier
+            </p>
+          </div>
+          <div class="money-card">
+            <h4>Producción Fase 1 (~1,000 usuarios)</h4>
+            <p>
+              Supuesto: ~300–500 usuarios activos al mes, decenas de reservas,
+              catálogo acotado (decenas de experiencias), mensajería de texto y
+              operaciones revisando payouts manualmente.
+            </p>
+            <p class="caption" style="margin-top: 0.75rem">
+              <strong>~$40–90 USD/mes</strong> · escala con reservas y fotos
+            </p>
+          </div>
+        </div>
+
+        <p class="note">
+          <strong>No incluido aquí:</strong> comisiones de Stripe (~2.9% + $0.30
+          por transacción), dominio, email transaccional (Resend/SendGrid) ni
+          futuro CDN (CloudFront) si el tráfico de imágenes lo justifica. Esos
+          ítems se presupuestan aparte cuando haya volumen real de reservas.
+          Tras el go-live, el cliente asume también Stripe, dominio y servicios
+          transaccionales en su propia cuenta.
         </p>
       </section>
     </main>
